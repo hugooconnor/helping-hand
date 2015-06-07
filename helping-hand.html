@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  {{>loginButtons }}
+
     <div class="row">
       <div class="span4"> 
       </div>
@@ -24,8 +24,9 @@
             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         Settings
         </button>
+
         <form class="new-report">
-            <input type="text" name="text" placeholder="Add comment" />
+            <input type="text" name="text" placeholder="Add Report" />
         </form>
         <ul>
             {{#each reports}}
@@ -38,5 +39,5 @@
 </body>
 
 <template name="report">
-    <li>{{comment}}</li>
+    <li>{{comment}} {{created}} {{helper}} {{helpee}}</li>
 </template>
