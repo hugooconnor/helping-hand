@@ -3,9 +3,15 @@ Reports = new Mongo.Collection("reports");
 if (Meteor.isClient) {
 
   Template.body.helpers({
+
+    //lookupUserId: function (id) {
+      //return Meteor.users.findOne(id);
+    //},
+
     reports: function () {
       return Reports.find({});
     }
+
   });
 
   Template.body.events({
