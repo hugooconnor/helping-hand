@@ -82,4 +82,8 @@ Relapse prevention strategies;
         - Psychosis;
             - thinking you're someone else,
 
+Decay of reports;
+
+y = 1 - (x/14)^2
+
 <insert mental health info>

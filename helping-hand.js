@@ -1,13 +1,16 @@
 Reports = new Mongo.Collection("reports");
 
+xyz = function(event, ui){
+          var confidence = $("#slider").slider("value");
+          $("#confidence").text("My confidence in this report: "+confidence+"%");
+        }
+
 if (Meteor.isClient) {
 
   Template.slider.onRendered(function () {
       $("#slider").slider({
-        change: function(event, ui){
-          var confidence = $("#slider").slider("value");
-          $("#confidence").text("My confidence in this report: "+confidence+"%");
-        }
+        slide: xyz,
+        change: xyz
       });
 
           $("#confidence").text("Select your degree of confidence");
