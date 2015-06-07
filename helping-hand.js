@@ -2,6 +2,11 @@ Reports = new Mongo.Collection("reports");
 
 if (Meteor.isClient) {
 
+  Template.slider.onRendered(function () {
+      $("#slider").slider();
+      //$("#slider").text("hello");
+  });
+
   Template.body.helpers({
 
     //lookupUserId: function (id) {

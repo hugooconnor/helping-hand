@@ -28,8 +28,7 @@
         <form class="new-report">
             <input type="text" name="text" placeholder="Add Report" />
         </form>
-        <div id="slider"></div>
-        {{slider}}
+        {{>slider}}
         <ul>
             {{#each reports}}
             {{>report}}
@@ -42,4 +41,8 @@
 
 <template name="report">
     <li>{{comment}} {{created}} {{helper}} {{helpee}}</li>
+</template>
+
+<template name="slider">
+        <div id="slider"></div>
 </template>
