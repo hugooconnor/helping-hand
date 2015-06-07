@@ -97,4 +97,14 @@ Monetisation;
     eg. counselling could be bought in blocks of time, hookup with good counsellors, clip the ticket on the fees charged (10%)
 - app should be free to use, free software (see licence)
 
+#To Dos;
+
+- add anonymity button for report submission
+- add invites system
+- add health bar
+- add lives
+- add permissions/roles (helpee, helper, carer)
+- add volume settings so helpee can rate their confidence in helper/carers
+- add time delay on settings
+
 <insert mental health info>
