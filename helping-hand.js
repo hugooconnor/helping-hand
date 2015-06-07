@@ -3,8 +3,15 @@ Reports = new Mongo.Collection("reports");
 if (Meteor.isClient) {
 
   Template.slider.onRendered(function () {
-      $("#slider").slider();
-      //$("#slider").text("hello");
+      $("#slider").slider({
+        change: function(event, ui){
+          var confidence = $("#slider").slider("value");
+          $("#confidence").text("My confidence in this report: "+confidence+"%");
+        }
+      });
+
+          $("#confidence").text("Select your degree of confidence");
+
   });
 
   Template.body.helpers({
@@ -20,12 +27,13 @@ if (Meteor.isClient) {
 
 
   Template.body.events({
+
     "submit .new-report": function (event) {
         var text = event.target.text.value;
         var date = new Date();
         var helper = Meteor.userId();
         var helpee = 'hugo';
-        var confidence = 100;
+        var confidence = $("#slider").slider("value");
 
         Reports.insert({ 
             helper: helper,
@@ -40,11 +48,6 @@ if (Meteor.isClient) {
 
         return false;
     },
-
-    //"click button":function(event, template){
-    //template.$("p").toggle();
-    //}
-
 
   });
 

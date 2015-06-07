@@ -27,6 +27,7 @@
 
         <form class="new-report">
             <input type="text" name="text" placeholder="Add Report" />
+            <input type="submit" class="btn"/>
         </form>
         {{>slider}}
         <ul>
@@ -40,9 +41,12 @@
 </body>
 
 <template name="report">
-    <li>{{comment}} {{created}} {{helper}} {{helpee}}</li>
+    <li>{{comment}} | {{created}} | {{helper}} | {{helpee}} | {{confidence}}</li>
 </template>
 
 <template name="slider">
+        
+        <div id="confidence"></div>
+
         <div id="slider"></div>
 </template>
