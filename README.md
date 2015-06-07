@@ -62,23 +62,24 @@ potential living balanced, healthy lives.
 #Notes;
 
 Relapse prevention strategies;
+
     Warning Signs;
-        Mania;
-            elevated,
-            no sleep,
-            working oftend,
-            neglect responsibilities,
-            forgetfulness,
-            spending too much money,
-            thinking you're someone else,
-            overcommitting
-        Depression;
-            isolation,
-            not sleeping,
-            crying frequently,
-            social withdrawl,
-            +/- appetite
-        Psychosis;
-            thinking you're someone else,
+        - Mania;
+            - elevated,
+            - no sleep,
+            - working oftend,
+            - neglect responsibilities,
+            - forgetfulness,
+            - spending too much money,
+            - thinking you're someone else,
+            - overcommitting
+        - Depression;
+            - isolation,
+            - not sleeping,
+            - crying frequently,
+            - social withdrawl,
+            - +/- appetite
+        - Psychosis;
+            - thinking you're someone else,
 
 <insert mental health info>
