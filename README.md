@@ -106,5 +106,7 @@ Monetisation;
 - add permissions/roles (helpee, helper, carer)
 - add volume settings so helpee can rate their confidence in helper/carers
 - add time delay on settings
+- add emails/alert system
+- add relapse prevention strategy forms
 
 <insert mental health info>
