@@ -1,7 +1,7 @@
-![Logo](https://raw.githubusercontent.com/hugooconnor/helping-hand/master/Triple-Spiral-Symbol-filled.svg)
+[Logo](https://raw.githubusercontent.com/hugooconnor/helping-hand/master/Triple-Spiral-Symbol-filled.svg)
+
 #Helping Hand;
-A social intelligence app
-to assist those with problematic behaviours
+**A social intelligence app to assist those with problematic behaviours**
 
 Helping Hand combines the wisdom of 
 your trusted family and friends to
