@@ -1,4 +1,4 @@
- 
+![Logo](https://en.wikipedia.org/wiki/Triple_spiral#/media/File:Triple-Spiral-Symbol-filled.svg)
 #Helping Hand;
 A social intelligence app
 to assist those with problematic behaviours
