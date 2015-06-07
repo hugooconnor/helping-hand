@@ -54,7 +54,7 @@ potential living balanced, healthy lives.
 #How it Works;
 
 1. Nominate close friends and family
-2. Complete a personality survey
+2. Complete a personality survey/ relapse prevention plan
 3. Family and friends (your helping hands) create accounts
 4. Your helping hands can flag when your behaviour is getting out of hand
 5. Helping Hand will alert you to this, so you can modulate your behaviour before it all gets out of hand.
@@ -85,5 +85,16 @@ Relapse prevention strategies;
 Decay of reports;
 
 y = 1 - (x/14)^2
+
+early on, it will decrease more slowly
+rate of decay increases over time.
+reports will go to 0 at day 14
+
+Monetisation;
+
+- crowdfunding?
+- hook in existing mental health services, charge listing fee
+    eg. counselling could be bought in blocks of time, hookup with good counsellors
+- app should be free to use, free software (see licence)
 
 <insert mental health info>
