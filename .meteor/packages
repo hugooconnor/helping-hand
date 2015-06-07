@@ -9,3 +9,8 @@ autopublish
 insecure
 accounts-ui
 accounts-password
+twitter
+facebook
+accounts-facebook
+bootstrap
+bootstrap3:glyphicons

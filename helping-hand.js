@@ -1,4 +1,4 @@
-Reports = new Mongo.Collection("report")
+Reports = new Mongo.Collection("reports");
 
 if (Meteor.isClient) {
 

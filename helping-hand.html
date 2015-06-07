@@ -4,14 +4,37 @@
 
 <body>
   {{>loginButtons }}
-    <form class="new-report">
-        <input type="text" name="text" placeholder="Add comment" />
-    </form>
-    <ul>
-        {{#each reports}}
-        {{>report}}
-        {{/each}}
-    </ul>
+    <div class="row">
+      <div class="span4"> 
+      </div>
+      
+      <div class="span8">
+        <!-- main section -->
+
+        <h1>Give a Helping Hand</h1>
+        <h5><a href="https://www.youtube.com/watch?v=Jl5vi9ir49g">he aint heavy, he's my brother...</a></h5>
+        {{> loginButtons}}
+
+        <button type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+        File Report
+        </button>
+
+        <button type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        Settings
+        </button>
+        <form class="new-report">
+            <input type="text" name="text" placeholder="Add comment" />
+        </form>
+        <ul>
+            {{#each reports}}
+            {{>report}}
+            {{/each}}
+        </ul>
+
+      </div>
+    </div>
 </body>
 
 <template name="report">
