@@ -7,12 +7,13 @@
 meteor-platform
 autopublish
 insecure
-accounts-ui
 accounts-password
 twitter
 facebook
 accounts-facebook
-bootstrap
 bootstrap3:glyphicons
 jquery
 linto:jquery-ui
+ian:accounts-ui-bootstrap-3
+twbs:bootstrap
+stylus

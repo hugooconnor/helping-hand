@@ -1,43 +1,88 @@
 <head>
-  <title>helping-hand</title>
+    <title>H E L P I N G H A N D</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
 
-    <div class="row">
-      <div class="span4"> 
-      </div>
-      
-      <div class="span8">
-        <!-- main section -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div id="logo" class="col-sm-2">
+                    <img src="helpinghand.svg"/>
+                    <h1> H E L P I N G H A N D</h1>
+                </div>
+                <div class="navbar navbar-default col-sm-8 pull-right" role="navigation">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">give a helping hand</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <!-- <li class="active"><a href="#">Link If you Need them</a></li> -->
+                            <button type="button" class="btn btn-default btn-lg">
+                                <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                                 File Report
+                            </button>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            {{> loginButtons}} <!-- here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <h1>Give a Helping Hand</h1>
-        <h5><a href="https://www.youtube.com/watch?v=Jl5vi9ir49g">he aint heavy, he's my brother...</a></h5>
-        {{> loginButtons}}
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="row">
+                        <h5><a href="https://www.youtube.com/watch?v=Jl5vi9ir49g">he aint heavy, he's my brother...</a></h5>
+                    </div>
 
-        <button type="button" class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-        File Report
-        </button>
+                    <div class="row">
+                        <h2>Create Report</h2>
+                        <form class="new-report">
+                            <input type="text" name="text" placeholder="Add Report Title" />
+                            <input type="submit" class="btn"/>
+                        </form>
+                        {{>slider}}
+                    </div>
+                    <div class="row">
+                        <h2>Reports</h2>
+                        <ul>
+                            {{#each reports}}
+                                {{>report}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <button type="button" class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-        Settings
-        </button>
-
-        <form class="new-report">
-            <input type="text" name="text" placeholder="Add Report" />
-            <input type="submit" class="btn"/>
-        </form>
-        {{>slider}}
-        <ul>
-            {{#each reports}}
-            {{>report}}
-            {{/each}}
-        </ul>
-
-      </div>
-    </div>
+    <footer>
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                HelpingHand is licensed under the <a href="http://www.gnu.org/licenses" target="_blank">GNU General Public License</a>
+            </div>
+        </div>
+    </footer>
+            
 </body>
 
 <template name="report">
@@ -49,4 +94,9 @@
         <div id="confidence"></div>
 
         <div id="slider"></div>
+</template>
+
+<template name="_loginButtonsAdditionalLoggedInDropdownActions">
+    <!-- Setting button, not hooked in with router see https://github.com/ianmartorell/meteor-accounts-ui-bootstrap-3/#add-additional-logged-in-actions -->
+    <button class="btn btn-default btn-block" id="login-buttons-edit-profile"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</button>
 </template>
