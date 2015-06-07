@@ -11,8 +11,8 @@ if (Meteor.isClient) {
     reports: function () {
       return Reports.find({});
     }
-
   });
+
 
   Template.body.events({
     "submit .new-report": function (event) {
@@ -34,7 +34,13 @@ if (Meteor.isClient) {
         event.target.text.value = "";
 
         return false;
-    }
+    },
+
+    //"click button":function(event, template){
+    //template.$("p").toggle();
+    //}
+
+
   });
 
 }
