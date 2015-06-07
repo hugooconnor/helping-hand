@@ -9,3 +9,6 @@ autopublish
 insecure
 accounts-ui
 accounts-password
+twitter
+facebook
+accounts-facebook
