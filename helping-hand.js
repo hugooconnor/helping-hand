@@ -1,23 +1,25 @@
 Reports = new Mongo.Collection("reports");
 
-
 if (Meteor.isClient) {
 
-  //function to add report
-  AddReport = function () {
-    
-  }
-
-  //function to calculate user health
-
-  //
- 
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-
-
+  Template.body.helpers({
+    reports: function () {
+      return Reports.find({});
+    }
   });
+
+  Template.body.events({
+    "submit .new-report": function (event) {
+        var text = event.target.text.value;
+
+        Reports.insert({
+            comment: text
+        });
+
+        event.target.text.value = "";
+
+        return false;
+    }
+  });
+
 }
