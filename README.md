@@ -94,7 +94,7 @@ Monetisation;
 
 - crowdfunding?
 - hook in existing mental health services, charge listing fee
-    eg. counselling could be bought in blocks of time, hookup with good counsellors
+    eg. counselling could be bought in blocks of time, hookup with good counsellors, clip the ticket on the fees charged (10%)
 - app should be free to use, free software (see licence)
 
 <insert mental health info>
