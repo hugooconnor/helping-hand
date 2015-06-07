@@ -3,12 +3,17 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  {{>loginButtons }}
+    <form class="new-report">
+        <input type="text" name="text" placeholder="Add comment" />
+    </form>
+    <ul>
+        {{#each reports}}
+        {{>report}}
+        {{/each}}
+    </ul>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="report">
+    <li>{{comment}}</li>
 </template>
