@@ -108,5 +108,6 @@ Monetisation;
 - add time delay on settings
 - add emails/alert system
 - add relapse prevention strategy forms
+- add website copy
 
 <insert mental health info>
