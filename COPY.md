@@ -85,7 +85,7 @@ Hey {user's name},
 
 You're at 0% health, people are really worried about you!
 
-I can sell you some health, for a price wink wink.
+I can get you some health, for a price wink wink.
 
 No, I can't really do that, but you should do something and quick.
 
@@ -101,6 +101,10 @@ Helping Hand is made by a bunch of hackers who are optimistic that all forms of 
 #Resources;
 
 Helping Hand is intended to compliment, rather than replace, existing mental health care systems. If you are a mental health services provider and wish to be listed here, please contact {helping hand listing email}
+
+#Privacy;
+
+We're asking you to not trust us with any private data, please don't give us any if you can avoid it. We'll do our best to keep your data safe but make no warranties. After all, we're using a database with MONG in it's name. Your best option is to create a codename for yourself. Access this site through TOR, see https://www.torproject.org/
 
 {insert links to mental health info}
 
