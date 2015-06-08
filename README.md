@@ -67,7 +67,7 @@ Relapse prevention strategies;
         - Mania;
             - elevated,
             - no sleep,
-            - working oftend,
+            - working often,
             - neglect responsibilities,
             - forgetfulness,
             - spending too much money,
@@ -102,7 +102,7 @@ Monetisation;
 - % of population with bipolar ~ 1%
 - cost of bipolar suicides in Australia (over lifetime) ~ $286,650,000,000
 - cost savings in Australia if Helping Hand can reduce bipolar suicide rate by 1% ~ $2,866,500,000
-- cost savings in USA if Helping Hand can reduce bipolar suicide rate by 1% ~ $43,5 29,850,000
+- cost savings in USA if Helping Hand can reduce bipolar suicide rate by 1% ~ $43,529,850,000
 
 #To Dos;
 
