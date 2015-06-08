@@ -86,9 +86,10 @@ Decay of reports;
 
 y = 1 - (x/14)^2
 
-early on, it will decrease more slowly
-rate of decay increases over time.
-reports will go to 0 at day 14
+- early on, it will decrease more slowly
+- rate of decay increases over time. 
+- eg. f(0) = 1, f(7) ~ 0.8, f(14) = 0
+- reports will go to 0 at day 14
 
 Monetisation;
 
