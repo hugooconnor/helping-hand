@@ -97,6 +97,12 @@ Monetisation;
 - hook in existing mental health services, charge listing fee
     eg. counselling could be bought in blocks of time, hookup with good counsellors, clip the ticket on the fees charged (10%)
 - app should be free to use, free software (see licence)
+- cost of human life ~ $9,100,000
+- lifetime suicide rate of bipolar people ~ 15%
+- % of population with bipolar ~ 1%
+- cost of bipolar suicides in Australia (over lifetime) ~ $286,650,000,000
+- cost savings in Australia if Helping Hand can reduce bipolar suicide rate by 1% ~ $2,866,500,000
+- cost savings in USA if Helping Hand can reduce bipolar suicide rate by 1% ~ $43,5 29,850,000
 
 #To Dos;
 
