@@ -98,13 +98,13 @@ Not Turing Complete
 
 Helping Hand is made by a bunch of hackers who are optimistic that all forms of mental illness can be mastered and overcome (easier said than done, of course). We'll consider this project a success even if we help just one person. Helping Hand is free open source software licensed under the GNU public license. There is no system but GNU.
 
-#Resources;
-
-Helping Hand is intended to compliment, rather than replace, existing mental health care systems. If you are a mental health services provider and wish to be listed here, please contact {helping hand listing email}
-
 #Privacy;
 
 We're asking you to not trust us with any private data, please don't give us any if you can avoid it. We'll do our best to keep your data safe but make no warranties. After all, we're using a database with MONG in it's name. Your best option is to create a codename for yourself. Access this site through TOR, see https://www.torproject.org/
+
+#Resources;
+
+Helping Hand is intended to compliment, rather than replace, existing mental health care systems. If you are a mental health services provider and wish to be listed here, please contact {helping hand listing email}
 
 {insert links to mental health info}
 
