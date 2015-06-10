@@ -137,6 +137,7 @@ Helping Hand is a free open source software project, built by the community. The
 - help design a testing framework, to create an evidence base
 - provide backgrounding info on mental health
 - provide links to existing mental health resources
+- user interface design (usability is a big part of this project)
 
 To get in touch to contribute, email; {contributors email address}
 To sign up for beta testing, email; {beta testing email address}
