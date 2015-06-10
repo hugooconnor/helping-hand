@@ -22,10 +22,19 @@ if (Meteor.isClient) {
     //lookupUserId: function (id) {
       //return Meteor.users.findOne(id);
     //},
-
+    
     reports: function () {
       return Reports.find({});
+    },
+
+    hasReport: function () {
+      if (Reports.find({}).count() > 0){
+        return true;
+      } else {
+        return false;
+      }
     }
+
   });
 
 
