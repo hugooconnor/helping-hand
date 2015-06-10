@@ -1,12 +1,16 @@
+//Create Reports collection on 'meteor reset'
 Reports = new Mongo.Collection("reports");
 
+//Confidence slider
 xyz = function(event, ui){
           var confidence = $("#slider").slider("value");
           $("#confidence").text("My confidence in this report: "+confidence+"%");
         }
 
+//All client javascript
 if (Meteor.isClient) {
 
+  //do jquery stuff once slider div is rendered
   Template.slider.onRendered(function () {
       $("#slider").slider({
         slide: xyz,
@@ -17,16 +21,15 @@ if (Meteor.isClient) {
 
   });
 
+  //Body helper functions
   Template.body.helpers({
 
-    //lookupUserId: function (id) {
-      //return Meteor.users.findOne(id);
-    //},
-
+    //return report data
     reports: function () {
       return Reports.find({});
     },
 
+    //return true if report(s)
     hasReport: function () {
       if (Reports.find({}).count() > 0){
         return true;
@@ -37,8 +40,10 @@ if (Meteor.isClient) {
 
   });
 
+  //Body event functions
   Template.body.events({
 
+    //create a new report on submission
     "submit .new-report": function (event) {
         var text = event.target.text.value;
         var date = new Date();
@@ -62,17 +67,24 @@ if (Meteor.isClient) {
 
   });
 
+//report helper functions
 Template.report.helpers({
 
+    //Return user id or Anonymous
     lookupUserId: function (id) {
       if (id){
         return Meteor.users.findOne(id);
       } else {
         return 'Anonymous';
       }
-      
     },
 
-  });
+    //prettyDate: function (date) {
+    //}
 
-}
+  });
+};
+
+//All server javascript
+if (Meteor.isServer) {
+};
