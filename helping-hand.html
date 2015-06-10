@@ -90,13 +90,11 @@
 </body>
 
 <template name="report">
-    <li>{{comment}} | {{created}} | {{helper}} | {{helpee}} | {{confidence}}</li>
+    <li>{{comment}} | {{created}} | {{lookupUserId helper}} | {{helpee}} | {{confidence}}</li>
 </template>
 
 <template name="slider">
-        
         <div id="confidence"></div>
-
         <div id="slider"></div>
 </template>
 

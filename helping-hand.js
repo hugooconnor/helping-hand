@@ -22,7 +22,7 @@ if (Meteor.isClient) {
     //lookupUserId: function (id) {
       //return Meteor.users.findOne(id);
     //},
-    
+
     reports: function () {
       return Reports.find({});
     },
@@ -36,7 +36,6 @@ if (Meteor.isClient) {
     }
 
   });
-
 
   Template.body.events({
 
@@ -59,6 +58,19 @@ if (Meteor.isClient) {
         event.target.text.value = "";
 
         return false;
+    },
+
+  });
+
+Template.report.helpers({
+
+    lookupUserId: function (id) {
+      if (id){
+        return Meteor.users.findOne(id);
+      } else {
+        return 'Anonymous';
+      }
+      
     },
 
   });
