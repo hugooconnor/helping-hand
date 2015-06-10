@@ -117,6 +117,7 @@ Monetisation;
 - add emails/alert system
 - add relapse prevention strategy forms
 - add website copy
+- wireframe design
 
 #How to Contribute;
 
