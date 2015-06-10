@@ -118,4 +118,27 @@ Monetisation;
 - add relapse prevention strategy forms
 - add website copy
 
+#How to Contribute;
+
+Helping Hand is a free open source software project, built by the community. There are many ways you can get involved and help make this app great;
+
+- contribute code
+- help build our relapse prevention planning framework
+- contribute other skills/ knowledge/ ideas
+- provide a critical or dissenting voice on the project
+- people with lived experience can provide tips and insights
+- suggest features
+- sign up for beta testing
+- spread the word about the project to your network
+- donate money to speed up development
+- marketing/ PR assistance for the app's launch (early 2016)
+- develop health economics arguments for or against the app
+- provide evidence base for the underlying assumptions of the app
+- help design a testing framework, to create an evidence base
+- provide backgrounding info on mental health
+- provide links to existing mental health resources
+
+To get in touch to contribute, email; {contributors email address}
+To sign up for beta testing, email; {beta testing email address}
+
 <insert mental health info>
