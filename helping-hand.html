@@ -13,37 +13,7 @@
 <body>
 
     <header>
-        <div class="container">
-            <div class="row">
-                <div id="logo" class="col-sm-2">
-                    <img src="helpinghand.svg"/>
-                    <h1> H E L P I N G H A N D</h1>
-                </div>
-                <div class="navbar navbar-default col-sm-8 pull-right" role="navigation">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">give a helping hand</a>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <!-- <li class="active"><a href="#">Link If you Need them</a></li> -->
-                            <button type="button" class="btn btn-default btn-lg">
-                                <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-                                 File Report
-                            </button>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            {{> loginButtons}} <!-- here -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{> navbar }}
     </header>
 
     <section id="main">
@@ -54,14 +24,8 @@
                         <h5><a href="https://www.youtube.com/watch?v=Jl5vi9ir49g">he aint heavy, he's my brother...</a></h5>
                     </div>
 
-                    <div class="row">
-                        <h2>Create Report</h2>
-                        <form class="new-report">
-                            <input type="text" name="text" placeholder="Add Report Title" />
-                            <input type="submit" class="btn"/>
-                        </form>
-                        {{>slider}}
-                    </div>
+                    {{> createReport}}
+                    
 
                     {{#if hasReport}}
                     <div class="row">
@@ -79,15 +43,11 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                HelpingHand is licensed under the <a href="https://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a>
-            </div>
-        </div>
-    </footer>
+    {{> license}}
             
 </body>
+
+<!-- report -->
 
 <template name="report">
     <li>{{comment}} | {{created}} | {{lookupUserId helper}} | {{helpee}} | {{confidence}}</li>
@@ -95,10 +55,82 @@
 
 <template name="slider">
         <div id="confidence"></div>
+        <br />
         <div id="slider"></div>
 </template>
+
+<!-- reports -->
+
+<template name= "reports">
+
+</template>
+
+<!-- createReport -->
+
+<template name="createReport">
+    <div class="row">
+        <h2>Create Report</h2>
+            <form class="new-report">
+                <input type="text" name="text" placeholder="Add Report Comment" />
+                <input type="submit" class="btn"/>
+            </form>
+            <br />
+            {{>slider}}
+    </div>
+</template>
+
+
+<!-- _loginButtonsAdditionalLoggedInDropdownActions -->
 
 <template name="_loginButtonsAdditionalLoggedInDropdownActions">
     <!-- Setting button, not hooked in with router see https://github.com/ianmartorell/meteor-accounts-ui-bootstrap-3/#add-additional-logged-in-actions -->
     <button class="btn btn-default btn-block" id="login-buttons-edit-profile"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</button>
+</template>
+
+<!-- navbar -->
+
+<template name="navbar">
+    
+            <div class="row">
+                
+
+                <div class="navbar navbar-default col-sm-8 pull-right" role="navigation">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">give a helping hand</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <!-- <li class="active"><a href="#">Link If you Need them</a></li> -->
+                            <button type="button" class="btn btn-default btn-lg">
+                                <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                                 File Report
+                            </button>
+                            <button type="button" class="btn btn-default btn-lg">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                 Settings
+                            </button>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            {{> loginButtons}} <!-- here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+</template>
+
+<!-- license -->
+
+<template name="license">
+    <br />
+    <footer>
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                Helping Hand is licensed under the <a href="https://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a>
+            </div>
+        </div>
+    </footer>
 </template>

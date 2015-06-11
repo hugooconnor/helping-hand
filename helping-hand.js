@@ -17,7 +17,7 @@ if (Meteor.isClient) {
         change: xyz
       });
 
-          $("#confidence").text("Select your degree of confidence");
+          $("#confidence").text("Select your degree of confidence:");
 
   });
 
