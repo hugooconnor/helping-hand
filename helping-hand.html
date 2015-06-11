@@ -29,7 +29,7 @@
 
                     {{#if hasReport}}
                     <div class="row">
-                        <h2>Reports</h2>
+                        <h2>My Reports;</h2>
                         <ul>
                             {{#each reports}}
                                 {{>report}}
@@ -50,7 +50,7 @@
 <!-- report -->
 
 <template name="report">
-    <li>{{comment}} | {{created}} | {{lookupUserId helper}} | {{helpee}} | {{confidence}}</li>
+    <li>About: {{helpee}} | By: {{lookupUserId helper}} |  {{#if comment}} {{comment}} {{else}} no comment left {{/if}} | {{created}} | Confidence: {{confidence}}%</li>
 </template>
 
 <template name="slider">
@@ -69,9 +69,9 @@
 
 <template name="createReport">
     <div class="row">
-        <h2>Create Report</h2>
+        <h2>Create Report;</h2>
             <form class="new-report">
-                <input type="text" name="text" placeholder="Add Report Comment" />
+                <input type="text" name="text" placeholder="Add Comment (can be blank)" />
                 <input type="submit" class="btn"/>
             </form>
             <br />

@@ -4,7 +4,7 @@ Reports = new Mongo.Collection("reports");
 //Confidence slider
 xyz = function(event, ui){
           var confidence = $("#slider").slider("value");
-          $("#confidence").text("My confidence in this report: "+confidence+"%");
+          $("#confidence").text("My confidence in this report; "+confidence+"%");
         }
 
 //All client javascript
@@ -17,7 +17,7 @@ if (Meteor.isClient) {
         change: xyz
       });
 
-          $("#confidence").text("Select your degree of confidence:");
+          $("#confidence").text("Select your degree of confidence (0-100);");
 
   });
 
