@@ -8,13 +8,10 @@ meteor-platform
 autopublish
 insecure
 accounts-password
-twitter
-facebook
-accounts-facebook
-bootstrap3:glyphicons
 jquery
 linto:jquery-ui
-ian:accounts-ui-bootstrap-3
-twbs:bootstrap
 stylus
 email
+meteoric:ionic
+meteoric:ionicons-sass
+meteoric:ionic-sass
