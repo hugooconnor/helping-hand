@@ -4,6 +4,12 @@ Reports = new Mongo.Collection("reports");
 //Create Settings collection on 'meteor reset'
 Settings = new Mongo.Collection("settings");
 
+//Create Settings collection on 'meteor reset'
+Invites = new Mongo.Collection("invites");
+
+//Create Settings collection on 'meteor reset'
+Emails = new Mongo.Collection("emails");
+
 //Confidence slider
 xyz = function(event, ui){
           var confidence = $("#slider").slider("value");
