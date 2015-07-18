@@ -1,0 +1,40 @@
+<template name="addHelpee">
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+{{/contentFor}}
+
+{{#contentFor "headerButtonRight"}}
+<a href='settings' id="settings" class="button button-icon icon ion-settings"></a>
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Add Someone to Help</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+  <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Email Address</span>
+            <input type="text" id="username">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Subject</span>
+            <input type="password" id="password">
+        </label>
+
+        <label class="item item-input item-stacked-label">
+        <span class="input-label">Invite Message</span>
+
+        <textarea placeholder="Hello" rows="8" cols="10">
+        </textarea>
+        </label>
+        <button class="button button-block button-balanced" id="login">
+        Invite
+        </button>
+
+    </div>
+
+  {{/ionContent}}
+{{/ionView}}
+</template>
