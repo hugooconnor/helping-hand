@@ -1,0 +1,48 @@
+<template name="index">
+<head>
+    <title>H E L P I N G H A N D</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <ion-content class="has-header">
+        <div class="bar bar-header bar-positive">
+            <h1 class="title">Helping Hand</h1>
+        </div>
+        <div class="padding-bottom"></div>
+        <div class="padding-bottom"></div>
+        <div class="padding-bottom"></div>
+        <div class="padding-bottom"></div>
+        <div class="padding-bottom"></div>
+    
+    
+    {{#if currentUser}}
+        {{> dashboard}}
+    {{else}}
+        {{setloginID}}
+        {{#if loginID}}
+        {{> login}}
+        {{/if}}
+        {{#if joinID}}
+        {{> join}}
+        {{/if}}
+        {{#if resetID}}
+        {{> reset}}
+        {{/if}}
+    {{/if}}
+    
+    <div class="bar bar-footer bar-balanced">
+        <div class="padding-top">
+            <div class="title">LICENCED UNDER THE GNU GPL</div>
+        </div>
+    </div>
+</ion-content>
+</body>
+</template>
