@@ -1,4 +1,7 @@
 <template name="login">
+{{#contentFor "headerButtonRight"}}
+{{/contentFor}}
+
 {{#contentFor "headerTitle"}}
   <h1 class="title">Login</h1>
 {{/contentFor}}
@@ -14,10 +17,10 @@
             <span class="input-label">Password</span>
             <input type="password" id="password">
         </label>
-        <button class="button button-block button-positive" id="login">
+        <button class="button button-block button-balanced" id="login">
         Login
         </button>
-        <a href="join" class="button button-block button-balanced" id="join">
+        <a href="join" class="button button-block button-stable" id="join">
         Join
         </a>
         <a href="reset" class="button button-block button-stable" id="reset">
