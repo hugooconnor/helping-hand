@@ -1,0 +1,25 @@
+<template name='about'>
+
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="settings"}}
+{{/contentFor}}
+
+{{#contentFor "headerButtonRight"}}
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">About Helping Hand</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+  <div class="card">
+    <div class="item item-text-wrap">
+    Helping Hand is made by a bunch of hackers who are optimistic that all forms of mental illness can be mastered and overcome (easier said than done, of course). We'll consider this project a success even if we help just one person. Helping Hand is free open source software licensed under the GNU public license. Distribution for a fee via the app-store pays for maintenance and ongoing improvements.
+    </div>
+  </div>
+
+  {{/ionContent}}
+{{/ionView}}
+
+</template>

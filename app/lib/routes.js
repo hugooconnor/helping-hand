@@ -21,4 +21,5 @@ Router.map( function () {
   this.route('addHelper');
   this.route('addAlert');
   this.route('addReport');
+  this.route('about');
 });

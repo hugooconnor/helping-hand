@@ -6,7 +6,6 @@ Template.join.events({
           username = t.find('#username').value;
 
         // Trim and validate the input
-      console.log("clicked");
 
       Accounts.createUser({email: email, password : password, username: username}, function(err){
           if (err) {

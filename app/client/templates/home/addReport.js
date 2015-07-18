@@ -5,19 +5,19 @@ Template.addReport.events({
       var health = t.find('#health').value;
       var message = t.find('#message').value;
       var date = new Date();
-      var anon = t.find('#anon').value;
-      console.log(anon);
+      //var anon = t.find('#anon').value;
+      //console.log(anon);
 
-      //Reports.insert({ 
-        //    helper: Meteor.user().username,
-          //  helpee: username,
-            //comment: message,
-            //health: health,
-            //created: date,
-        //});
+      Reports.insert({ 
+            helper: Meteor.user().username,
+            helpee: username,
+            comment: message,
+            health: health,
+            created: date,
+        });
       
       
-      //Router.go('/');
+        Router.go('/');
         return false;
       },
 
