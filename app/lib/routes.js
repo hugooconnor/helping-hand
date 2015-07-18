@@ -19,4 +19,5 @@ Router.map( function () {
   this.route('addHelpee');
   this.route('addPartner');
   this.route('addHelper');
+  this.route('addAlert');
 });

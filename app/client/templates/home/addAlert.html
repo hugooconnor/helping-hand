@@ -1,42 +1,42 @@
-<template name="addHelper">
+<template name="addAlert">
 {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton path="index"}}
+    {{>ionNavBackButton path="settings"}}
 {{/contentFor}}
 
 {{#contentFor "headerButtonRight"}}
-<a href='settings' id="settings" class="button button-icon icon ion-settings"></a>
 {{/contentFor}}
 
 {{#contentFor "headerTitle"}}
-  <h1 class="title">Invite Helpers</h1>
+  <h1 class="title">Set Alert Email</h1>
 {{/contentFor}}
 
 {{#ionView}}
   {{#ionContent}}
   <div class="card">
     <div class="item item-text-wrap">
-    Helpers are people you trust to report to you about your behaviours.
+    Try convince yourself to take action when your support group are concerned about you. Set the slider to the health level you want to be alerted at.
     </div>
   </div>
 
   <div class="list">
+        <div class="item range">
+          <i class="icon ion-ios-heart-outline"></i>
+          <input type="range" name="volume">
+          <i class="icon ion-ios-heart"></i>
+        </div>
         <label class="item item-input">
-            <span class="input-label">Email Address</span>
-            <input type="text" id="username">
-        </label>
-        <label class="item item-input">
-            <span class="input-label">Subject</span>
+            <span class="input-label">Alert Subject</span>
             <input type="password" id="password">
         </label>
 
         <label class="item item-input item-stacked-label">
-        <span class="input-label">Invite Message</span>
+        <span class="input-label">Alert Message</span>
 
         <textarea placeholder="Hello" rows="8" cols="10">
         </textarea>
         </label>
         <button class="button button-block button-balanced" id="invite">
-        Invite
+        Set Alert
         </button>
 
     </div>

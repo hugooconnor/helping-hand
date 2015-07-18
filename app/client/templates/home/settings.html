@@ -1,6 +1,6 @@
 <template name="settings">
 {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton path="index"}}
+    {{>ionNavBackButton path="home"}}
 {{/contentFor}}
 
 {{#contentFor "headerTitle"}}
@@ -31,15 +31,15 @@
   </li>
   <li class="item item-button-right">
     Alert Emails
-    <button class="button button-positive">
+    <a href="addAlert" class="button button-positive">
       <i class="icon ion-compose"></i>
-    </button>
+    </a>
   </li>
   <li class="item item-button-right">
     Log Out
-    <button class="button button-positive" id="signout">
+    <a href="#" class="button button-positive" id="signout">
       <i class="icon ion-power"></i>
-    </button>
+    </a>
   </li>
   </ul>
 
