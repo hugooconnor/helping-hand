@@ -9,6 +9,10 @@ Template.dashboard.events({
 
 Template.dashboard.helpers({
   reports: function () {
-      return Reports.find({});
+      var start = new Date(Date.now()-14*24*60*60*1000);
+      return Reports.find({helpee: Meteor.user().username, created: { $gt: start}});
     }
+
+  //add health calculation here.
+
 });
