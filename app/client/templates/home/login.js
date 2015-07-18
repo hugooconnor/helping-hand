@@ -19,7 +19,11 @@ Template.login.events({
           // could be incorrect. Inform the user that their
           // login attempt has failed. 
             console.log(err.message);
-            throw new Meteor.Error("create-failed", err.message)
+            IonPopup.alert({
+            title: 'Error',
+            template: err.message,
+            okText: 'Got It.'
+            });
         }
           
         else {

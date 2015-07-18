@@ -12,6 +12,11 @@ Template.join.events({
           if (err) {
             // Inform the user that account creation failed
             console.log(err);
+            IonPopup.alert({
+            title: 'Error',
+            template: err.message,
+            okText: 'Got It.'
+            });
           } else {
             // Success. Account has been created and the user
             // has logged in successfully. 
