@@ -17,6 +17,6 @@ Router.map( function () {
   this.route('dashboard');
   this.route('settings');
   this.route('addHelpee');
-  this.route('add-partner');
-  this.route('add-helper');
+  this.route('addPartner');
+  this.route('addHelper');
 });
