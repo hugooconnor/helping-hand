@@ -15,4 +15,5 @@ Router.map( function () {
   this.route('reset');
   this.route('join');
   this.route('dashboard');
+  this.route('settings');
 });

@@ -1,17 +1,25 @@
 <template name="dashboard">
 
-{{#contentFor "headerTitle"}}
-  <h1 class="title">Helping Hand</h1>
+{{#contentFor "headerButtonRight"}}
+<a href='settings' id="settings" class="button button-icon icon ion-settings"></a>
 {{/contentFor}}
 
-{{#contentFor "headerButtonRight"}}
-Logout
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Helping Hand</h1>
 {{/contentFor}}
 
 
 {{#ionView}}
   {{#ionContent}}
-    DASHBOARD CONTENT GOES 
+    <div class="card">
+    <div class="item item-text-wrap">
+    Your health is at 60%
+    </div>
+    </div>
+
+
+
+
   {{/ionContent}}
 {{/ionView}}
 </template>

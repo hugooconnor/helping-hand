@@ -1,0 +1,42 @@
+<template name="settings">
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Settings</h1>
+{{/contentFor}}
+
+
+{{#ionView}}
+  {{#ionContent}}
+  <ul class="list">
+  <li class="item item-toggle">
+     Make reports visible to partners
+     <label class="toggle toggle-balanced">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Make profile discoverable
+     <label class="toggle toggle-balanced">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-button-right">
+    Alert Emails
+    <button class="button button-positive">
+      <i class="icon ion-compose"></i>
+    </button>
+  </li>
+  </ul>
+
+  {{/ionContent}}
+{{/ionView}}
+</template>
