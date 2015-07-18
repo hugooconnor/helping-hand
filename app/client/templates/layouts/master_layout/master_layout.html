@@ -1,5 +1,11 @@
 <template name="MasterLayout">
-        {{#ionBody}}
-            {{>yield}}
-        {{/ionBody}}
+{{#ionBody}}
+
+  {{> ionNavBar class="bar-positive"}}
+
+  {{#ionNavView}}
+    {{> yield}}
+  {{/ionNavView}}
+
+{{/ionBody}}
 </template>

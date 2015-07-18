@@ -1,0 +1,32 @@
+<template name="join">
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+  {{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Join</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Email</span>
+            <input type="text" id="email">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Username</span>
+            <input type="text" id="username">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" id="password">
+        </label>
+        <button class="button button-block button-balanced" id="join">
+        Join
+        </button>
+
+    </div>
+  {{/ionContent}}
+{{/ionView}}
+</template>

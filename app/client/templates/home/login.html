@@ -1,0 +1,30 @@
+<template name="login">
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Login</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Username</span>
+            <input type="text" id="username">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" id="password">
+        </label>
+        <button class="button button-block button-positive" id="login">
+        Login
+        </button>
+        <a href="join" class="button button-block button-balanced" id="join">
+        Join
+        </a>
+        <a href="reset" class="button button-block button-stable" id="reset">
+        Reset Password
+        </a>
+
+    </div>
+  {{/ionContent}}
+{{/ionView}}
+</template>

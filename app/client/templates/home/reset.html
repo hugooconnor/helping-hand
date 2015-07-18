@@ -1,0 +1,24 @@
+<template name="reset">
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+  {{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Reset Password</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Email</span>
+            <input type="text" id="email">
+        </label>
+        <button href="reset" class="button button-block button-stable" id="reset">
+        Reset Password
+        </button>
+
+    </div>
+  {{/ionContent}}
+{{/ionView}}
+</template>

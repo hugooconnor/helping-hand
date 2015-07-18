@@ -10,3 +10,9 @@ Router.route('/', {
   action: 'action',
   where: 'client'
 });
+
+Router.map( function () {
+  this.route('reset');
+  this.route('join');
+  this.route('dashboard');
+});
