@@ -1,7 +1,7 @@
 /*****************************************************************************/
 /* Home: Event Handlers */
 /*****************************************************************************/
-Template.Home.events({
+Template.home.events({
     'click #signout' : function(e, t){
       e.preventDefault();
       console.log("signout clicked.");
@@ -12,17 +12,17 @@ Template.Home.events({
 /*****************************************************************************/
 /* Home: Helpers */
 /*****************************************************************************/
-Template.Home.helpers({
+Template.home.helpers({
 });
 
 /*****************************************************************************/
 /* Home: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Home.created = function () {
+Template.home.created = function () {
 };
 
-Template.Home.rendered = function () {
+Template.home.rendered = function () {
 };
 
-Template.Home.destroyed = function () {
+Template.home.destroyed = function () {
 };
