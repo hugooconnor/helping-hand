@@ -18,13 +18,23 @@
     </div>
 
     <div class="list">
+
+    <div class="item item-divider item-icon-right">
+    Reports About You
+    <a href="addReport"><i class="icon ion-plus-circled"></i></a>
+    </div>
+
+    {{#each reports}}
+        {{>report}}
+    {{/each}}
+
     <div class="item item-divider item-icon-right">
     You Are Helping
     <a href="addHelpee"><i class="icon ion-plus-circled"></i></a>
     </div>
 
     <a class="item" href="#">
-    You aren't helping anyone yet! That's OK.
+    You aren't helping anyone yet.
     </a>
     
     <div class="item item-divider item-icon-right">
