@@ -1,0 +1,45 @@
+<template name="addReport">
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="home"}}
+{{/contentFor}}
+
+{{#contentFor "headerButtonRight"}}
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Submit Report</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+  <div class="card">
+    <div class="item item-text-wrap">
+    Set the slider to the health score you believe your friend to be at, from 0 - need hospitalisation, to 100 - perfectly fine.
+    </div>
+  </div>
+
+  <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Username</span>
+            <input type="text" id="username">
+        </label>
+        <div class="item range">
+          <i class="icon ion-ios-heart-outline"></i>
+          <input type="range" name="health">
+          <i class="icon ion-ios-heart"></i>
+        </div>
+        <label class="item item-input item-stacked-label">
+        <span class="input-label">Report Message</span>
+
+        <textarea placeholder="Hello" rows="8" cols="10">
+        </textarea>
+        </label>
+        <button class="button button-block button-balanced" id="report">
+        Submit Report
+        </button>
+
+    </div>
+
+  {{/ionContent}}
+{{/ionView}}
+</template>

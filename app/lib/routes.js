@@ -20,4 +20,5 @@ Router.map( function () {
   this.route('addPartner');
   this.route('addHelper');
   this.route('addAlert');
+  this.route('addReport');
 });
