@@ -8,6 +8,7 @@ Template.editEmail.events({
     'click #edit-email': function(e, t){
         e.preventDefault();
         var email = t.find('#email').value;
-        Meteor.call('updateEmail', email); 
+        Meteor.call('updateEmail', email);
+        Router.go('settings') 
     }
 })
