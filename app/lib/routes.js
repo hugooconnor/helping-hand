@@ -23,4 +23,21 @@ Router.map( function () {
   this.route('addReport');
   this.route('about');
   this.route('editEmail');
+  this.route('editAlert', {
+  // get parameter via this.params
+  path: '/alerts/:_id',
+  data: function (){
+    var _id  = this.params._id;
+    var health = Alerts.findOne(_id).health;
+    var subject = Alerts.findOne(_id).subject;
+    var body = Alerts.findOne(_id).body;
+    templateData = {
+      _id: _id,
+      subject: subject,
+      body: body,
+      health: health,
+    };
+    return templateData;
+  }
+});
 });

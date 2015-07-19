@@ -6,3 +6,10 @@ Template.settings.events({
       Router.go('/');
       },
   });
+
+
+Template.settings.helpers({
+  alerts: function () {
+      return Alerts.find({helpee: Meteor.user().username});
+    },
+});

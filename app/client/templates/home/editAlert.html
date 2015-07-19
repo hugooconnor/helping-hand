@@ -1,0 +1,42 @@
+<template name='editAlert'>
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="settings"}}
+{{/contentFor}}
+
+{{#contentFor "headerButtonRight"}}
+<button id="delete" class="button button-icon icon ion-trash-a"></button>
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Edit Alert Email</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+
+  <div class="list">
+        <div class="item range">
+          <i class="icon ion-ios-heart-outline"></i>
+          <input type="range" name="volume" id="health" value={{health}}>
+          <i class="icon ion-ios-heart"></i>
+        </div>
+        <label class="item item-input">
+            <span class="input-label">Alert Subject</span>
+            <input type="text" id="alert-subject" placeholder={{subject}}>
+        </label>
+
+        <label class="item item-input item-stacked-label">
+        <span class="input-label">Alert Message</span>
+        <textarea rows="8" cols="10" id="alert-message" placeholder={{body}}>
+        </textarea>
+        </label>
+
+        <button class="button button-block button-balanced" id="set-alert">
+        Save Alert
+        </button>
+
+    </div>
+
+  {{/ionContent}}
+{{/ionView}}
+</template>

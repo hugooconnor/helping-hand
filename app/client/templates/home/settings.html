@@ -29,12 +29,6 @@
        </div>
      </label>
   </li>
-  <li class="item item-button-right">
-    Alert Emails
-    <a href="addAlert" class="button button-positive">
-      <i class="icon ion-compose"></i>
-    </a>
-  </li>
 
   <li class="item item-button-right">
     Edit Email Address
@@ -57,6 +51,17 @@
       <i class="icon ion-information-circled"></i>
     </a>
   </li>
+
+  <li class="item item-button-right">
+    Alert Emails
+    <a href="addAlert" class="button button-positive">
+      <i class="icon ion-compose"></i>
+    </a>
+  </li>
+  
+    {{#each alerts}}
+        {{> alert}}
+    {{/each}}
 
   </ul>
 
