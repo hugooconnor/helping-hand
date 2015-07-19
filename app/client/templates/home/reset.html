@@ -9,16 +9,31 @@
 
 {{#ionView}}
   {{#ionContent}}
+
+  {{#if resetToken}}
+
+  <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="text" id="password">
+        </label>
+        <button class="button button-block button-balanced" id="reset-password">
+        Change Password
+        </button>
+    </div>
+
+    {{else}}
     <div class="list">
         <label class="item item-input">
             <span class="input-label">Email</span>
             <input type="text" id="email">
         </label>
-        <button href="reset" class="button button-block button-balanced" id="reset">
+        <button class="button button-block button-balanced" id="reset-form">
         Reset Password
         </button>
 
     </div>
+    {{/if}}
   {{/ionContent}}
 {{/ionView}}
 </template>
