@@ -58,10 +58,16 @@
       <i class="icon ion-compose"></i>
     </a>
   </li>
-  
+    
+    {{#if hasAlerts}}
+    <div class="item item-divider item-icon-right">
+    Your Alerts
+    </div>
+    {{/if}}
     {{#each alerts}}
         {{> alert}}
     {{/each}}
+    
 
   </ul>
 
