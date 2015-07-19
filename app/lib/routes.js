@@ -22,4 +22,5 @@ Router.map( function () {
   this.route('addAlert');
   this.route('addReport');
   this.route('about');
+  this.route('editEmail');
 });
