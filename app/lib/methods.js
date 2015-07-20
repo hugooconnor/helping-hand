@@ -126,7 +126,19 @@ Meteor.methods({
 
       //helpers, partners, helping
       addHelpers: function (helperId) {
-         return Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {helpers: helperId}})
+         return Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {helpers: helperId}});
+      },
+
+      addPartners: function (partnerId) {
+         return Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {partners: partnerId}});
+      },
+
+      addHelping: function (helpingId) {
+         return Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {helping: helpingId}});
+      },
+
+      addPartnered: function (partneredId) {
+         return Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {partnered: partneredId}});
       },
 
       getHelpers: function () {

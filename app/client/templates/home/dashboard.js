@@ -45,6 +45,7 @@ Template.dashboard.helpers({
     return Meteor.user().username;
   },
 
+  //not working properly
   noHelpers: function () {
     var helpers = Meteor.users.find(Meteor.userId()).fetch()[0].helpers;
     if (helpers.length > 0) {
@@ -61,6 +62,25 @@ Template.dashboard.helpers({
             helpersFull.push(Meteor.users.find(helpers[i]).fetch()[0]);
          }
          return helpersFull;
+  },
+
+  //not working properly
+  noPartners: function () {
+    var partners = Meteor.users.find(Meteor.userId()).fetch()[0].partners;
+    if (partners.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+
+  partners: function () {
+    var partners = Meteor.users.find(Meteor.userId()).fetch()[0].partners;
+    var partnersFull = [];
+         for (i=0; i < partners.length; i++){
+            partnersFull.push(Meteor.users.find(partners[i]).fetch()[0]);
+         }
+         return partnersFull;
   },
 
 });
