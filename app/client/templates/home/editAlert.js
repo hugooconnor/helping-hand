@@ -18,7 +18,32 @@ Template.editAlert.events({
         },
 
     'click #save-alert': function(e, t){
-        e.preventDefault();
-        console.log("clicked save!");
-    }
+      e.preventDefault();
+      var subject = t.find('#alert-subject').value;
+      var health = t.find('#health').value;
+      var body = t.find('#alert-message').value;
+      var date = new Date();
+      var id = this._id;
+      //var anon = t.find('#anon').value;
+      //console.log(anon);
+
+      Alerts.update(id, {$set: {
+        helpee: Meteor.user().username,
+            subject: subject,
+            body: body,
+            health: health,
+            created: date,
+      }});
+
+      IonPopup.alert({
+            title: 'Alert',
+            template: 'Alert email updated!',
+            okText: 'Got It.'
+            });
+
+
+
+        Router.go('settings');
+        return false;
+      },
 });
