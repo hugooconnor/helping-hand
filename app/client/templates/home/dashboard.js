@@ -83,4 +83,13 @@ Template.dashboard.helpers({
          return partnersFull;
   },
 
+  helping: function () {
+    var helping = Meteor.users.find(Meteor.userId()).fetch()[0].helping;
+    var helpingFull = [];
+         for (i=0; i < helping.length; i++){
+            helpingFull.push(Meteor.users.find(helping[i]).fetch()[0]);
+         }
+         return helpingFull;
+  },
+
 });

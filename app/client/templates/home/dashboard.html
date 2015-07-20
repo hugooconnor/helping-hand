@@ -33,9 +33,15 @@
     <a href="addHelpee"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
     </div>
 
+    {{#if noPartners}}
     <a class="item" href="#">
     You aren't helping anyone yet.
     </a>
+    {{/if}}
+
+    {{#each helping}}
+        {{> helpee}}
+    {{/each}}
     
     <div class="item item-divider item-icon-right">
         Your Partners
