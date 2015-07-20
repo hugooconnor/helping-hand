@@ -51,10 +51,15 @@
     <a href="addHelper"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
     </div>
 
+    {{#if noHelpers}}
     <a class="item" href="#">
     You have no helpers yet.
     </a>
+    {{/if}}
 
+    {{#each helpers}}
+        {{> helper}}
+    {{/each}}
 
 </div>
 

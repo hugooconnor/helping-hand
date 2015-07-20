@@ -13,17 +13,8 @@
   <ul class="list">
   <li class="item item-toggle">
      Make reports visible to partners
-     <label class="toggle toggle-balanced">
-       <input type="checkbox">
-       <div class="track">
-         <div class="handle"></div>
-       </div>
-     </label>
-  </li>
-  <li class="item item-toggle">
-     Make profile discoverable
-     <label class="toggle toggle-balanced">
-       <input type="checkbox">
+     <label class="toggle toggle-balanced" id="#reportsVisible">
+       <input type="checkbox" {{reportsVisible}}>
        <div class="track">
          <div class="handle"></div>
        </div>
@@ -64,6 +55,7 @@
     Your Alerts
     </div>
     {{/if}}
+    
     {{#each alerts}}
         {{> alert}}
     {{/each}}

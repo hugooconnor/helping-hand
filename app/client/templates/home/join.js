@@ -18,7 +18,8 @@ Template.join.events({
             });
           } else {
             // Success. Account has been created and the user
-            // has logged in successfully. 
+            // has logged in successfully.
+            // create default settings
             console.log("Account created");
             Router.go('/');
           }

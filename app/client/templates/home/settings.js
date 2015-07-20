@@ -8,14 +8,13 @@ Template.settings.events({
 
     //todo: hookup to checkboxes
     // Set filter option when toggles are changed
-    'change #filterForm .toggle [type="checkbox"]': function(e) {
+    'change .toggle [type="checkbox"]': function(e) {
         var checkbox = $(e.target);
-        var sessionName = 'filter_' + checkbox.attr('name');
 
         if (checkbox.is(':checked')) {
-            Session.setPersistent(sessionName, true);
+            console.log("checked");
         } else {
-            Session.setPersistent(sessionName, false);
+            console.log("unchecked");
         }
     },
   });
@@ -31,6 +30,22 @@ Template.settings.helpers({
         return true;
     } else {
         return false;
+    }
+  },
+
+  reportsVisible: function () {
+    if(true){
+        return "checked";
+    } else {
+        return "";
+    }
+  },
+
+  profileDiscoverable: function () {
+    if(true){
+        return "checked";
+    } else {
+        return "";
     }
   },
 

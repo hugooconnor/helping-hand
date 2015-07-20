@@ -1,3 +1,3 @@
 Reports = new Mongo.Collection("reports");
-Settings = new Mongo.Collection("settings");
+Invites = new Mongo.Collection("invites");
 Alerts = new Mongo.Collection("alerts");

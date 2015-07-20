@@ -41,8 +41,26 @@ Template.dashboard.helpers({
       return "<i class='icon ion-heart></i>";
   },
 
-  who: function() {
+  who: function () {
     return Meteor.user().username;
-  }
+  },
+
+  noHelpers: function () {
+    var helpers = Meteor.users.find(Meteor.userId()).fetch()[0].helpers;
+    if (helpers.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+
+  helpers: function () {
+    var helpers = Meteor.users.find(Meteor.userId()).fetch()[0].helpers;
+    var helpersFull = [];
+         for (i=0; i < helpers.length; i++){
+            helpersFull.push(Meteor.users.find(helpers[i]).fetch()[0]);
+         }
+         return helpersFull;
+  },
 
 });

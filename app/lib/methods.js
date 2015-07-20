@@ -123,4 +123,19 @@ Meteor.methods({
       }
   return true;
       },
+
+      //helpers, partners, helping
+      addHelpers: function (helperId) {
+         return Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {helpers: helperId}})
+      },
+
+      getHelpers: function () {
+         var helpers = Meteor.users.find(Meteor.userId()).fetch()[0].helpers;
+         var helpersFull = [];
+         for(i=0; i < helpers.length; i++){
+            helpersFull.push(Meteor.users.find(helpers[i]).fetch()[0]);
+         }
+         return helpersFull;
+      }
+
    });

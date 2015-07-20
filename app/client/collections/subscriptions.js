@@ -1,2 +1,3 @@
 Meteor.subscribe("reports");
-Meteor.subscribe("settings");
+Meteor.subscribe("alerts");
+Meteor.subscribe("userData");
