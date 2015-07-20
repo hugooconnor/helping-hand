@@ -32,5 +32,6 @@ Template.settings.helpers({
     } else {
         return false;
     }
-  }
+  },
+
 });

@@ -1,4 +1,7 @@
 Template.alert.helpers({
+    alertURL: function () {
+        return '/alerts/'+this._id;
+    }
 });
 
 Template.alert.events({

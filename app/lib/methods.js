@@ -55,7 +55,7 @@ Meteor.methods({
    },
 
    removeAlert: function (id) {
-      return Alerts.remove({_id: id});
+      return Alerts.remove(id);
    },
 
    test: function () {

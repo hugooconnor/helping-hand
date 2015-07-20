@@ -4,7 +4,6 @@
 {{/contentFor}}
 
 {{#contentFor "headerButtonRight"}}
-<button id="delete" class="button button-icon icon ion-trash-a"></button>
 {{/contentFor}}
 
 {{#contentFor "headerTitle"}}
@@ -22,17 +21,21 @@
         </div>
         <label class="item item-input">
             <span class="input-label">Alert Subject</span>
-            <input type="text" id="alert-subject" placeholder={{subject}}>
+            <input type="text" id="alert-subject" value={{subject}}>
         </label>
 
         <label class="item item-input item-stacked-label">
         <span class="input-label">Alert Message</span>
-        <textarea rows="8" cols="10" id="alert-message" placeholder={{body}}>
+        <textarea rows="8" cols="10" id="alert-message">
+            {{body}}
         </textarea>
         </label>
 
-        <button class="button button-block button-balanced" id="set-alert">
+        <button class="button button-block button-balanced" id="save-alert">
         Save Alert
+        </button>
+        <button class="button button-block button-assertive" id="delete-alert">
+        Delete Alert
         </button>
 
     </div>
