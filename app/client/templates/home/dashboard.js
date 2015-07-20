@@ -31,9 +31,7 @@ Template.dashboard.helpers({
       weighting += weight;
       health += parseInt(reports[i].health)*weight;
       }
-    console.log(health);
-    console.log(weighting);
-    return (health/(weighting+1)).toFixed(2);;
+    return (health/(weighting+1)).toFixed(2);
     }
   },
 
