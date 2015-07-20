@@ -24,7 +24,7 @@ Router.map( function () {
   this.route('about');
   this.route('editEmail');
   this.route('editAlert', {
-  // get parameter via this.params
+  //send data to alerts
   path: '/alerts/:_id',
   data: function (){
     var _id  = this.params._id;
@@ -32,12 +32,31 @@ Router.map( function () {
     var subject = Alerts.findOne(_id).subject;
     var body = Alerts.findOne(_id).body;
     templateData = {
-      _id: _id,
-      subject: subject,
-      body: body,
-      health: health,
-    };
+        _id: _id,
+        subject: subject,
+        body: body,
+        health: health,
+        };
     return templateData;
+        }
+    });
+});
+
+Router.onBeforeAction(function () {
+  // all properties available in the route function
+  // are also available here such as this.params
+
+  if (!Meteor.userId()) {
+    // if the user is not logged in, render the Login template
+    this.render('home');
+  } else {
+    // otherwise don't hold up the rest of hooks or our route/action function
+    // from running
+    this.next();
   }
-});
-});
+
+  
+},
+    // add exceptions for join and reset pages
+    {except: ['join', 'reset']}
+);

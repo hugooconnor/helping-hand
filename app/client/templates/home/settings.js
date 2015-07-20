@@ -5,6 +5,19 @@ Template.settings.events({
       Meteor.logout();
       Router.go('/');
       },
+
+    //todo: hookup to checkboxes
+    // Set filter option when toggles are changed
+    'change #filterForm .toggle [type="checkbox"]': function(e) {
+        var checkbox = $(e.target);
+        var sessionName = 'filter_' + checkbox.attr('name');
+
+        if (checkbox.is(':checked')) {
+            Session.setPersistent(sessionName, true);
+        } else {
+            Session.setPersistent(sessionName, false);
+        }
+    },
   });
 
 
