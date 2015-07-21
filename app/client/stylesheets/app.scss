@@ -49,6 +49,7 @@ $loading-font-size: 22px;
   .label {
     font-size: 1rem;
     color: white;
+    padding:  1rem 0 0 1rem;
   }  
 
   h2 {
@@ -56,7 +57,7 @@ $loading-font-size: 22px;
     color: white;
     font-weight: 200;
     text-align: center;
-    padding:  2rem 0 0 0;
+    padding: 0 0 2rem 0;
   }
 }
 
@@ -66,4 +67,8 @@ $loading-font-size: 22px;
     color: white;
     font-weight: 200;
     text-align: center;
+}
+
+.content.overflow-scroll {
+  bottom: 0px !important;
 }

@@ -2,13 +2,9 @@ Template.login.events({
 
     'click #login' : function(e, t){
       e.preventDefault();
-      Session.set("currentId", "login");
       // retrieve the input field values
       var username = t.find('#username').value
         , password = t.find('#password').value;
-
-        console.log("clicked "+username+" "+password);
-
         // Trim and validate your fields here.... 
 
         // If validation passes, supply the appropriate fields to the
@@ -33,6 +29,6 @@ Template.login.events({
         }
           
       });
-         return false; 
+
       },
   });

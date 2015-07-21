@@ -8,7 +8,7 @@
   "template": {
     "html": true,
     "js": true,
-    "css": true
+    "css": false
   },
 
   "route": {

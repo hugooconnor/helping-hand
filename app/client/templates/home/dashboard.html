@@ -16,7 +16,7 @@
         <h2>{{health}}%</h2>
     </div>
 
-    <div class="list">
+    {{#ionList}}
 
     <div class="item item-divider item-icon-right">
     Reports About You
@@ -73,10 +73,7 @@
         {{> helper}}
     {{/each}}
 
-</div>
-
-
-
+    {{/ionList}}
   {{/ionContent}}
 {{/ionView}}
 </template>
