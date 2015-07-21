@@ -29,20 +29,14 @@
 
     {{/ionList}}
 
-    <div class="tabs-striped tabs-color-positive">
-    <div class="tabs">
-      <a class="tab-item active" href="#">
-        <i class="icon ion-ios-heart"></i>
-      </a>
-      <a class="tab-item" href="people">
-        <i class="icon ion-person-stalker"></i>
-      </a>
-      <a class="tab-item" href="help">
-        <i class="icon ion-ios-help"></i>
-      </a>
-    </div>
-  </div>
-
+    <br />
   {{/ionContent}}
+
+  {{#ionTabs class="tabs-striped tabs-color-positive"}}
+        {{> ionTab title="Tab1" path="home" icon="ios-heart"}}
+        {{> ionTab title="Tab2" path="people" icon="person-stalker"}}
+        {{> ionTab title="Tab3" path="help" icon="ios-help"}}
+    {{/ionTabs}}
+
 {{/ionView}}
 </template>

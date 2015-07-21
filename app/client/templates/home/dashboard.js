@@ -14,6 +14,7 @@ Template.dashboard.helpers({
     },
 
   //add health calculation here.
+  //
   health: function () {
     var username = Meteor.user().username;
     var start = new Date(Date.now()-14*24*60*60*1000);
