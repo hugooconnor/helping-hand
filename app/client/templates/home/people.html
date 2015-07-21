@@ -1,0 +1,75 @@
+<template name="people">
+
+{{#contentFor "headerButtonRight"}}
+<a href='settings' id="settings" class="button button-icon icon ion-ios-gear"></a>
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Your Contacts</h1>
+{{/contentFor}}
+
+
+{{#ionView}}
+  {{#ionContent}}
+    {{#ionList}}
+
+    <div class="item item-divider item-icon-right">
+    You Are Helping
+    <a href="addHelpee"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
+    </div>
+
+   
+    <a class="item" href="#">
+    You aren't helping anyone yet.
+    </a>
+
+    {{#each helping}}
+        {{> helpee}}
+    {{/each}}
+    
+    <div class="item item-divider item-icon-right">
+        Your Partners
+    <a href="addPartner"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
+    </div>
+
+    <a class="item" href="#">
+    You have no partners yet.
+    </a>
+        
+    {{#each partners}}
+        {{> partner}}
+    {{/each}}
+
+
+    <div class="item item-divider item-icon-right">
+    Your Helpers
+    <a href="addHelper"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
+    </div>
+
+    <a class="item" href="#">
+    You have no helpers yet.
+    </a>
+
+    {{#each helpers}}
+        {{> helper}}
+    {{/each}}
+
+    {{/ionList}}
+
+    <div class="tabs-striped tabs-color-positive">
+    <div class="tabs">
+      <a class="tab-item" href="/">
+        <i class="icon ion-ios-heart"></i>
+      </a>
+      <a class="tab-item active" href="#">
+        <i class="icon ion-person-stalker"></i>
+      </a>
+      <a class="tab-item" href="help">
+        <i class="icon ion-ios-help"></i>
+      </a>
+    </div>
+  </div>
+
+  {{/ionContent}}
+{{/ionView}}
+</template>

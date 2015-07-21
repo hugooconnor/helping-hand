@@ -27,53 +27,22 @@
         {{>report}}
     {{/each}}
 
-    <div class="item item-divider item-icon-right">
-    You Are Helping
-    <a href="addHelpee"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
-    </div>
-
-    {{#if noPartners}}
-    <a class="item" href="#">
-    You aren't helping anyone yet.
-    </a>
-    {{/if}}
-
-    {{#each helping}}
-        {{> helpee}}
-    {{/each}}
-    
-    <div class="item item-divider item-icon-right">
-        Your Partners
-    <a href="addPartner"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
-    </div>
-
-    {{#if noPartners}}
-    <a class="item" href="#">
-    You have no partners yet.
-    </a>
-    {{/if}}
-        
-    {{#each partners}}
-        {{> partner}}
-    {{/each}}
-
-
-    <div class="item item-divider item-icon-right">
-    Your Helpers
-    <a href="addHelper"><i class="icon ion-plus-circled" style="color: #333;"></i></a>
-    </div>
-
-    {{#if noHelpers}}
-    <a class="item" href="#">
-    You have no helpers yet.
-    </a>
-    {{/if}}
-
-    {{#each helpers}}
-        {{> helper}}
-    {{/each}}
-
     {{/ionList}}
+
+    <div class="tabs-striped tabs-color-positive">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        <i class="icon ion-ios-heart"></i>
+      </a>
+      <a class="tab-item" href="people">
+        <i class="icon ion-person-stalker"></i>
+      </a>
+      <a class="tab-item" href="help">
+        <i class="icon ion-ios-help"></i>
+      </a>
+    </div>
+  </div>
+
   {{/ionContent}}
 {{/ionView}}
 </template>

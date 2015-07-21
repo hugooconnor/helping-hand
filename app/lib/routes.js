@@ -13,7 +13,9 @@ Router.route('/', {
 
 Router.map( function () {
   this.route('reset');
+  this.route('people');
   this.route('join');
+  this.route('help');
   this.route('dashboard');
   this.route('settings');
   this.route('addHelpee');

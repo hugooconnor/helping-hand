@@ -1,0 +1,54 @@
+<template name="help">
+
+{{#contentFor "headerButtonRight"}}
+<a href='settings' id="settings" class="button button-icon icon ion-ios-gear"></a>
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Helping Hand</h1>
+{{/contentFor}}
+
+
+{{#ionView}}
+  {{#ionContent}}
+    {{#ionList}}
+
+   <div class="card">
+    <div class="item item-text-wrap">
+    <h2>Inviting Friends</h2>
+    Click on the plus icon in the 'people' tab to invite a helper, someone to help, or a partner. Helpers can file reports about your behaviour. Partners can also file reports and are able to see your health score.
+    </div>
+    </div>
+
+    <div class="card">
+    <div class="item item-text-wrap">
+    <h2>Filing Reports</h2>
+    You can file reports on people who have invited you to be their helper or partner. Try your best to estimate their health from 0% needing hospitalisation, to 100% doing fine.
+    </div>
+    </div>
+
+    <div class="card">
+    <div class="item item-text-wrap">
+    <h2>Adding Alerts</h2>
+    You can add alerts in the settings page. These will trigger when your health drops below a certain threshold. Do you best to convince your future self to take the appropriate actions.
+    </div>
+    </div>
+    {{/ionList}}
+
+    <div class="tabs-striped tabs-color-positive">
+    <div class="tabs">
+      <a class="tab-item" href="/">
+        <i class="icon ion-ios-heart"></i>
+      </a>
+      <a class="tab-item" href="people">
+        <i class="icon ion-person-stalker"></i>
+      </a>
+      <a class="tab-item active" href="#">
+        <i class="icon ion-ios-help"></i>
+      </a>
+    </div>
+  </div>
+
+  {{/ionContent}}
+{{/ionView}}
+</template>
