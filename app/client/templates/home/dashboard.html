@@ -1,7 +1,7 @@
 <template name="dashboard">
 
 {{#contentFor "headerButtonRight"}}
-<a href='settings' id="settings" class="button button-icon icon ion-settings"></a>
+<a href='settings' id="settings" class="button button-icon icon ion-ios-gear"></a>
 {{/contentFor}}
 
 {{#contentFor "headerTitle"}}
@@ -11,10 +11,8 @@
 
 {{#ionView}}
   {{#ionContent}}
-    <div class="card">
-    <div class="item item-text-wrap">
-    <b>@{{who}}</b> Your health is {{health}}% 
-    </div>
+    <div class="jumbotron">
+        <h2>{{health}}%</h2>
     </div>
 
     <div class="list">

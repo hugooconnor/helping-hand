@@ -27,6 +27,7 @@ Template.editAlert.events({
       //var anon = t.find('#anon').value;
       //console.log(anon);
 
+      //change to server method
       Alerts.update(id, {$set: {
         helpee: Meteor.user().username,
             subject: subject,

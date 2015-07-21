@@ -8,6 +8,7 @@ Template.addReport.events({
       //var anon = t.find('#anon').value;
       //console.log(anon);
 
+      //change to server method and call
       Reports.insert({ 
             helper: Meteor.user().username,
             helpee: username,

@@ -8,7 +8,9 @@ Template.addAlert.events({
       //var anon = t.find('#anon').value;
       //console.log(anon);
 
+      //create as server method
       Alerts.insert({ 
+            //change to userID
             helpee: Meteor.user().username,
             subject: subject,
             body: body,
