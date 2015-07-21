@@ -7,4 +7,15 @@
 meteor-platform
 autopublish
 insecure
+jquery
+linto:jquery-ui
+stylus
+email
+meteoric:ionic
+meteoric:ionicons-sass
+meteoric:ionic-sass
 iron:router
+accounts-password
+accounts-ui-unstyled
+fourseven:scss@2.0.0
+accounts-base

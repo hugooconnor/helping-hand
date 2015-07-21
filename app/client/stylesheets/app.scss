@@ -36,3 +36,34 @@ $loading-font-size: 22px;
     top: 16px !important;
   }
 }
+
+
+.main {
+}
+
+//header st
+
+.jumbotron {
+    background: #1E52D4;
+
+  .label {
+    font-size: 1rem;
+    color: white;
+  }  
+
+  h2 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+    padding:  2rem 0 0 0;
+  }
+}
+
+
+.jumbotron p {
+    font-size: 2rem;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}

@@ -1,2 +1,2 @@
-cd ~/Sites/honey-bear/v0.2/app
+cd ~/Code/helping-hand/app
 meteor run ios  --settings ../config/development/settings.json
