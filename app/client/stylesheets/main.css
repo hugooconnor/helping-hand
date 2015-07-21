@@ -3,3 +3,23 @@
 /*****************************************************************************/
 .main {
 }
+
+.jumbotron {
+    background: #1E52D4;
+
+}
+
+.jumbotron h2 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.jumbotron p {
+    font-size: 2rem;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
