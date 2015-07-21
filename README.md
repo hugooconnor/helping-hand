@@ -17,32 +17,30 @@ It is intended to be a social self-improvement
 tool, to help keep people out of trouble,
 to prevent harm.
 
-To get started simply nominate a
+To get started simply invite a
 chosen group of your family and
-friends, who will be invited to
+friends to
 create an account. Once they have
 an account, they are able to log
 about your behaviours (anonymously,
 if they wish to) and can flag
-worrisome behaviours with a select
-degree of confidence.
+worrisome behaviours with an estimation of where your health is at.
 
 For example, Bob met Alice for coffee,
 Bob thought Alice was kind of manic
 but he wasn't sure, so he sent Alice
-a flag on helpinghand.io with 25% confidence.
+a report on helpinghand.io with estimating her health at 80%.
 
 Helping Hand will recommend a range
 of interventions to remedy a slate
-of problematic behaviours. It will 
-help users by providing a unique 
+of problematic behaviours, through an in built relapse prevention planning framework. It will help users by providing a unique 
 feedback mechanism.
 
 Helping Hand will also coach users
 to build a relapse prevention strategy.
 For example, should their health reach
 a certain undesirable threshold - helping
-hand will email the user with content the
+hand will alert the user with content the
 user has pre-written to themselves, should
 such an occasion arise.
 
@@ -61,35 +59,18 @@ potential living balanced, healthy lives.
 
 #Notes;
 
-Relapse prevention strategies;
+We assume a two week timeframe for health regeneration.
 
-    Warning Signs;
-        - Mania;
-            - elevated,
-            - no sleep,
-            - working often,
-            - neglect responsibilities,
-            - forgetfulness,
-            - spending too much money,
-            - thinking you're someone else,
-            - overcommitting
-        - Depression;
-            - isolation,
-            - not sleeping,
-            - crying frequently,
-            - social withdrawl,
-            - +/- appetite
-        - Psychosis;
-            - thinking you're someone else,
-
-Decay of reports;
+Therefore, weighting of reports;
 
 y = 1 - (x/14)^2
 
-- early on, it will decrease more slowly
-- rate of decay increases over time. 
 - eg. f(0) = 1, f(7) ~ 0.8, f(14) = 0
 - reports will go to 0 at day 14
+
+- Could use userbase as a platform for building a peer-support network. Eg. users volunteer to become peer supporters - connect to other users who are in bad health.
+
+- Check facebook update frequency to detect for mania/psychosis
 
 Monetisation;
 
@@ -107,17 +88,7 @@ Monetisation;
 
 #To Dos;
 
-- add anonymity button for report submission
-- add invites system
-- add health bar
-- add lives
-- add permissions/roles (helpee, helper, carer)
-- add volume settings so helpee can rate their confidence in helper/carers
-- add time delay on settings
-- add emails/alert system
-- add relapse prevention strategy forms
-- add website copy
-- wireframe design
+See; https://waffle.io/hugooconnor/helping-hand or open tickets on github.
 
 #How to Contribute;
 
