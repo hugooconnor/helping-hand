@@ -51,11 +51,11 @@ potential living balanced, healthy lives.
 
 #How it Works;
 
-1. Nominate close friends and family
-2. Complete a personality survey/ relapse prevention plan
+1. Invite close friends and family
+2. Complete a relapse prevention plan
 3. Family and friends (your helping hands) create accounts
-4. Your helping hands can flag when your behaviour is getting out of hand
-5. Helping Hand will alert you to this, so you can modulate your behaviour before it all gets out of hand.
+4. Your helping hands flag your behaviour, estimating health from your baseline
+5. Helping Hand will alert you to this, so you can modulate your behaviour
 
 #Notes;
 
