@@ -46,22 +46,12 @@ function isNotEmpty(val) {
   return true;
 }
 
-
-Template.reset.helpers({
-
-  resetToken: function(){
-    return Session.get('resetPassword');
-  }
-
-});
-
 Template.reset.events({
 
   'click #reset-form' : function(e, t) {
       e.preventDefault();
-      console.log('clicked');
       var email = trimInput(t.find('#email').value);
-      if (isNotEmpty(email, 'recoveryError') && isEmail(email, 'recoveryError')) {
+      if (isNotEmpty(email) && isEmail(email)) {
         Session.set('loading', true);
         Accounts.forgotPassword({email: email}, function(err){
         if (err){
@@ -92,7 +82,7 @@ Template.reset.events({
       var pw = t.find('#password').value;
       if (isNotEmpty(pw) && isValidPassword(pw)) {
         Session.set('loading', true);
-        Accounts.resetPassword(Session.get('resetPassword'), pw, function(err){
+        Accounts.resetPassword(Session.get('resetToken'), pw, function(err){
           if (err) {
             console.log(err.message);
             IonPopup.alert({
@@ -102,7 +92,6 @@ Template.reset.events({
             });
           }
           else {
-
             Router.go('/');
           }
           Session.set('loading', false);

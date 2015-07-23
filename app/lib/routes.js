@@ -12,9 +12,16 @@ Router.route('/', {
 });
 
 Router.map( function () {
-  this.route('reset');
+  this.route('reset', {
+    path:'/reset/:_id',
+    data: function () {
+      var resetToken = this.params._id;
+      Session.set('resetToken', resetToken)
+    }
+  });
   this.route('people');
   this.route('join');
+  this.route('forgot');
   this.route('help');
   this.route('dashboard');
   this.route('settings');
@@ -60,5 +67,5 @@ Router.onBeforeAction(function () {
   
 },
     // add exceptions for join and reset pages
-    {except: ['join', 'reset']}
+    {except: ['join', 'reset', 'forgot']}
 );
