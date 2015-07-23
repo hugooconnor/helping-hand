@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/hugooconnor/helping-hand.png?label=ready&title=Ready)](https://waffle.io/hugooconnor/helping-hand)
 [Logo](https://raw.githubusercontent.com/hugooconnor/helping-hand/master/Triple-Spiral-Symbol-filled.svg)
 
 #Helping Hand;
