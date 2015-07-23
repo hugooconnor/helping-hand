@@ -1,4 +1,13 @@
 Template.addReport.events({
+    'change .toggle [type="checkbox"]': function(e) {
+                var checkbox = $(e.target);
+                if (checkbox.is(':checked')) {
+                        Session.set('anonymous', true);
+                } else {
+                        Session.set('anonymous', false);
+                }
+        },
+
     'click #report' : function(e, t){
       e.preventDefault();
       var username = t.find('#username').value;
@@ -7,10 +16,15 @@ Template.addReport.events({
       var date = new Date();
       //var anon = t.find('#anon').value;
       //console.log(anon);
+      if (Session.get('anonymous')) {
+        var helper = 'anonymous';
+      } else {
+        var helper = Meteor.user().username;
+      }
 
       //change to server method and call
       Reports.insert({ 
-            helper: Meteor.user().username,
+            helper: helper,
             helpee: username,
             comment: message,
             health: health,
