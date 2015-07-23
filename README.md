@@ -1,4 +1,4 @@
-[Logo](https://raw.githubusercontent.com/hugooconnor/helping-hand/master/Triple-Spiral-Symbol-filled.svg)
+[Logo](https://github.com/hugooconnor/helping-hand/blob/master/public/helpinghand.svg)
 
 #Helping Hand;
 **A social intelligence app to assist those with problematic behaviours**
