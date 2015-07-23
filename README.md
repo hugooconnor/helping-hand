@@ -1,7 +1,7 @@
 #Helping Hand;
 **A social intelligence app to assist with behaviour**
 
-###work in progress; app.helpinghand.io
+[work in progress; app.helpinghand.io] (http://app.helpinghand.io)
 
 Helping Hand combines the wisdom of 
 your trusted family and friends to
