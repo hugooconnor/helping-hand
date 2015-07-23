@@ -158,6 +158,6 @@ Meteor.methods({
             helpersFull.push(Meteor.users.find(helpers[i]).fetch()[0]);
          }
          return helpersFull;
-      }
+      },
 
    });

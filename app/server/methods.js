@@ -19,5 +19,28 @@ Meteor.methods({
     });
   },
 
+  inviteUser: function (email, subject, body, userId, userRole, inviteeRole) {
+    if (Meteor.users.find({'emails.0.address': email}).fetch().length == 1){
+        var inviteeId = Meteor.users.find({'emails.0.address': email}).fetch()._id;
+        //add the user to invitee roles
+        Meteor.users.update({});
+        //add the invitee to users roles
+        Meteor.users.update({});
+        //send email to say what's going on
+        Meteor.call('sendEmail',
+                      email,
+                      Meteor.find(userId).fetch().emails[0].address,
+                      subject,
+                      body
+                        );
+    } else {
+      //create new user
+      var invitedId = Accounts.createUser({email: email});
+      //add the user to invitee roles
+      //add the invitee to users roles
+      //send enrollment link in an email
+    }
+  },
+
 
 });
