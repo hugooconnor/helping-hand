@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [Logo](https://github.com/hugooconnor/helping-hand/blob/master/public/helpinghand.svg)
+=======
+[![Stories in Ready](https://badge.waffle.io/hugooconnor/helping-hand.png?label=ready&title=Ready)](https://waffle.io/hugooconnor/helping-hand)
+>>>>>>> 83a508c4f8e1e7eb053fa04a6c7aba8ddf2a0811
 
 #Helping Hand;
 **A social intelligence app to assist those with problematic behaviours**
