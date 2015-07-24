@@ -10,7 +10,7 @@ starts getting out of hand.
 
 The app is designed for bipolar people,
 but could also be helpful to those
-with problematic behaviours of any kind,
+with poor emotional and social well-being of any kind,
 or those who simply want to improve themselves.
 
 It is intended to be a social self-improvement
@@ -24,12 +24,12 @@ create an account. Once they have
 an account, they are able to log
 about your behaviours (anonymously,
 if they wish to) and can flag
-worrisome behaviours with an estimation of where your health is at.
+worrisome behaviours with an estimation of where your social and emotional well-being is at.
 
 For example, Bob met Alice for coffee,
 Bob thought Alice was kind of manic
 but he wasn't sure, so he sent Alice
-a report on helpinghand.io with estimating her health at 80%.
+a report on helpinghand.io, estimating her well-being at 80%.
 
 Helping Hand will recommend a range
 of interventions to remedy a slate
@@ -38,14 +38,14 @@ feedback mechanism.
 
 Helping Hand will also coach users
 to build a relapse prevention strategy.
-For example, should their health reach
+For example, should their well-being reach
 a certain undesirable threshold - helping
 hand will alert the user with content the
 user has pre-written to themselves, should
 such an occasion arise.
 
 The goal is to keep people out of harms way,
-to interven early, to keep people out of 
+to intervene early, to keep people out of 
 hospital so that they can reach their full
 potential living balanced, healthy lives.
 
@@ -54,12 +54,12 @@ potential living balanced, healthy lives.
 1. Invite close friends and family
 2. Complete a relapse prevention plan
 3. Family and friends (your helping hands) create accounts
-4. Your helping hands flag your behaviour, estimating health from your baseline
-5. Helping Hand will alert you to this, so you can modulate your behaviour
+4. Your helping hands flag your behaviour, estimating well-being from your baseline
+5. Helping Hand will alert you to this, so you can take steps to improve your well-being
 
 #Notes;
 
-We assume a two week timeframe for health regeneration.
+We assume a two week timeframe for well-being regeneration.
 
 Therefore, weighting of reports;
 
