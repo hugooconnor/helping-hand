@@ -20,27 +20,36 @@ Meteor.methods({
   },
 
   inviteUser: function (email, subject, body, userId, userRole, inviteeRole) {
-    if (Meteor.users.find({'emails.0.address': email}).fetch().length == 1){
-        var inviteeId = Meteor.users.find({'emails.0.address': email}).fetch()._id;
+    var obj1 = {};
+    obj1[userRole] = userId;
+    var obj2 = {};
+    //can't fill obj2 until we have inviteeId
+
+    if (Meteor.users.find({'emails.0.address': email}).fetch().length > 0){
+        var inviteeId = Meteor.users.find({'emails.0.address': email}).fetch()[0]._id;
         //add the user to invitee roles
-        Meteor.users.update({});
+        obj2[inviteeRole] = inviteeId;
+        Meteor.users.update({_id: userId}, {$addToSet: obj2});
         //add the invitee to users roles
-        Meteor.users.update({});
+        Meteor.users.update({_id: inviteeId}, {$addToSet: obj1});
         //send email to say what's going on
         Meteor.call('sendEmail',
                       email,
-                      Meteor.find(userId).fetch().emails[0].address,
+                      'no-reply@helpinghand.io',
                       subject,
                       body
                         );
     } else {
       //create new user
-      var invitedId = Accounts.createUser({email: email});
-      //add the user to invitee roles
+      var inviteeId = Accounts.createUser({email: email, password: 'password'});
       //add the invitee to users roles
+      obj2[inviteeRole] = inviteeId;
+      Meteor.users.update({_id: userId}, {$addToSet: obj2});
+      //add the invitee to users roles
+      Meteor.users.update({_id: inviteeId}, {$addToSet: obj1});
       //send enrollment link in an email
+      Accounts.sendEnrollmentEmail(inviteeId);
     }
   },
-
 
 });
