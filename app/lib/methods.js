@@ -3,8 +3,12 @@
 /*****************************************************************************/
 
 Meteor.startup(function() {
-  return Accounts.urls.resetPassword = function(token) {
+  Accounts.urls.resetPassword = function (token) {
     return Meteor.absoluteUrl('reset/' + token);
+  };
+
+  Accounts.urls.enrollAccount = function (token) {
+    return Meteor.absoluteUrl('enrol/' + token);
   };
 });
 

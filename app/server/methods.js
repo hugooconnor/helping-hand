@@ -41,7 +41,7 @@ Meteor.methods({
                         );
     } else {
       //create new user
-      var inviteeId = Accounts.createUser({email: email, password: 'password'});
+      var inviteeId = Accounts.createUser({email: email, password: 'password', username: email});
       //add the invitee to users roles
       obj2[inviteeRole] = inviteeId;
       Meteor.users.update({_id: userId}, {$addToSet: obj2});

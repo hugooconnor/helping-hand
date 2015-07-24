@@ -19,6 +19,13 @@ Router.map( function () {
       Session.set('resetToken', resetToken)
     }
   });
+  this.route('enrol', {
+    path:'/enrol/:_id',
+    data: function () {
+      var enrolToken = this.params._id;
+      Session.set('enrolToken', enrolToken)
+    }
+  });
   this.route('people');
   this.route('join');
   this.route('forgot');
