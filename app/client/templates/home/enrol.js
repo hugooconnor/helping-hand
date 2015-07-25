@@ -66,7 +66,7 @@ Template.enrol.events({
           else {
             Router.go('/');
             //not updating properly
-            Meteor.users.update({_id: Meteor.userId()}, {$set: {username: username}});
+            Meteor.call('updateUsername', Meteor.userId(), username);
           }
           Session.set('loading', false);
         });

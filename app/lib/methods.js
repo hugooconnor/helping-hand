@@ -164,5 +164,9 @@ Meteor.methods({
          return helpersFull;
       },
 
+      updateUsername: function (id, username) {
+        return Meteor.users.update({_id: id}, {$set: {username: username}});
+      }
+
      
    });
