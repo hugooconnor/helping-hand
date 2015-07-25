@@ -74,5 +74,5 @@ Router.onBeforeAction(function () {
   
 },
     // add exceptions for join and reset pages
-    {except: ['join', 'reset', 'forgot']}
+    {except: ['join', 'reset', 'forgot', 'enrol']}
 );

@@ -55,7 +55,7 @@ Template.enrol.events({
 
       if(isNotEmpty(username)){
         Meteor.call('updateUsername', Meteor.userId(), username, function (err){ 
-        if(err){
+        if (err){
           return false;
         } else {
               if (isNotEmpty(pw) && isValidPassword(pw)) {
