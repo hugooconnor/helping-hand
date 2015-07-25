@@ -47,40 +47,39 @@ function isNotEmpty(val) {
 }
 
 Template.enrol.events({
-
 'click #createAccount' : function(e, t) {
       e.preventDefault();
       var pw = t.find('#password').value;
       var username = t.find('#username').value;
-
-      if(isNotEmpty(username)){
-        Meteor.call('updateUsername', Meteor.userId(), username, function (err){ 
-        if (err){
-          return false;
-        } else {
-              if (isNotEmpty(pw) && isValidPassword(pw)) {
-                Session.set('loading', true);
-                Accounts.resetPassword(Session.get('enrolToken'), pw, function (err){
-                if (err) {
-                    console.log(err.message);
-                    IonPopup.alert({
-                    title: 'Error',
-                    template: err.message,
-                    okText: 'Got It.'
-                    });
-                }
-                else {
-                    Router.go('/');
-                }
-                Session.set('loading', false);
-                });
-              }
-
-           }
-
+      if (isNotEmpty(pw) && isValidPassword(pw)) {
+        Session.set('loading', true);
+        Accounts.resetPassword(Session.get('enrolToken'), pw, function(err){
+          if (err) {
+            console.log(err.message);
+            IonPopup.alert({
+            title: 'Error',
+            template: err.message,
+            okText: 'Got It.'
+            });
+          }
+          else {
+            Router.go('/');
+            //simple fix for unique usernames
+            if (Meteor.users.find({username: username}) != null) {
+              username+="1";
+              IonPopup.alert({
+              title: 'Allert',
+              template: 'Your username is '+username,
+              okText: 'Got It.'
+            });
+            }
+            //not updating properly
+            Meteor.call('updateUsername', Meteor.userId(), username);
+          }
+          Session.set('loading', false);
         });
       }
     return false;
-    },
+    }
 
   });
