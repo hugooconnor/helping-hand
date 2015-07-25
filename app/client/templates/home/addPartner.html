@@ -1,4 +1,8 @@
 <template name="addPartner">
+{{#if isLoading}}
+  {{>spinner}}
+{{else}}
+
 {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton path="index"}}
 {{/contentFor}}
@@ -32,4 +36,5 @@
 
   {{/ionContent}}
 {{/ionView}}
+{{/if}}
 </template>

@@ -11,13 +11,15 @@ Template.addPartner.events({
 
       var email = t.find('#email').value;
       var userId  = Meteor.userId();
+      Session.set('loadingSplash', true);
 
       Meteor.call('inviteUser', email, 'subject', 'message', userId, 'partnered', 'partners', function(error, result){
       	if(error){
       		console.log(error.reason)
+      		Session.set('loadingSplash', false);
       	} else {
-      		console.log('all good');
-      		Router.go('/');
+      		Router.go('/people');
+      		Session.set('loadingSplash', false);
       		return false;
       			}
       });
@@ -26,3 +28,9 @@ Template.addPartner.events({
 
   });
 
+Template.addPartner.helpers({
+    isLoading: function () {
+      return Session.get('loadingSplash');
+    },
+
+});

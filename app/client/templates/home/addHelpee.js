@@ -13,13 +13,16 @@ Template.addHelpee.events({
       var subject = t.find('#subject').value;
       var message = t.find('#message').value;
       var userId  = Meteor.userId();
+      Session.set('loadingSplash', true);
 
       Meteor.call('inviteUser', email, subject, message, userId, 'helpers', 'helping', function(error, result){
         if(error){
           console.log(error.reason)
+          Session.set('loadingSplash', false);
         } else {
           console.log('all good');
-          Router.go('/');
+          Router.go('/people');
+          Session.set('loadingSplash', false);
           return false;
             }
       });
@@ -27,4 +30,11 @@ Template.addHelpee.events({
 
 
   });
+
+Template.addHelpee.helpers({
+    isLoading: function () {
+      return Session.get('loadingSplash');
+    },
+
+});
 
