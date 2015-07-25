@@ -52,26 +52,35 @@ Template.enrol.events({
       e.preventDefault();
       var pw = t.find('#password').value;
       var username = t.find('#username').value;
-      if (isNotEmpty(pw) && isValidPassword(pw)) {
-        Session.set('loading', true);
-        Accounts.resetPassword(Session.get('enrolToken'), pw, function(err){
-          if (err) {
-            console.log(err.message);
-            IonPopup.alert({
-            title: 'Error',
-            template: err.message,
-            okText: 'Got It.'
-            });
-          }
-          else {
-            Router.go('/');
-            //check that username is not already in use - if so, add a 1
-            //not updating properly
-            Meteor.call('updateUsername', Meteor.userId(), username);
-          }
-          Session.set('loading', false);
+
+      if(isNotEmpty(username)){
+        Meteor.call('updateUsername', Meteor.userId(), username, function (err){ 
+        if(err){
+          return false;
+        } else {
+              if (isNotEmpty(pw) && isValidPassword(pw)) {
+                Session.set('loading', true);
+                Accounts.resetPassword(Session.get('enrolToken'), pw, function (err){
+                if (err) {
+                    console.log(err.message);
+                    IonPopup.alert({
+                    title: 'Error',
+                    template: err.message,
+                    okText: 'Got It.'
+                    });
+                }
+                else {
+                    Router.go('/');
+                }
+                Session.set('loading', false);
+                });
+              }
+
+           }
+
         });
       }
     return false;
-    }
+    },
+
   });

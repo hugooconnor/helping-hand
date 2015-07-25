@@ -165,7 +165,16 @@ Meteor.methods({
       },
 
       updateUsername: function (id, username) {
-        return Meteor.users.update({_id: id}, {$set: {username: username}});
+        if (Meteor.users.findOne({username: username}) != null){
+          IonPopup.alert({
+            title: 'Error',
+            template: 'That username is taken',
+            okText: 'Got It.'
+            });
+          throw new Meteor.Error( 500, 'There was an error processing your request' );
+        } else {
+          return Meteor.users.update({_id: id}, {$set: {username: username}});
+        }
       }
 
      
