@@ -65,6 +65,7 @@ Template.enrol.events({
           }
           else {
             Router.go('/');
+            //check that username is not already in use - if so, add a 1
             //not updating properly
             Meteor.call('updateUsername', Meteor.userId(), username);
           }
