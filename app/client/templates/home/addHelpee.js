@@ -10,12 +10,10 @@ Template.addHelpee.events({
       //check data is valid
 
       var email = t.find('#email').value;
-      var subject = t.find('#subject').value;
-      var message = t.find('#message').value;
       var userId  = Meteor.userId();
       Session.set('loadingSplash', true);
 
-      Meteor.call('inviteUser', email, subject, message, userId, 'helpers', 'helping', function(error, result){
+      Meteor.call('inviteUser', email, 'subject', 'message', userId, 'helpers', 'helping', function(error, result){
         if(error){
           console.log(error.reason)
           Session.set('loadingSplash', false);
