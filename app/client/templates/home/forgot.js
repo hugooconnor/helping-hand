@@ -47,12 +47,13 @@ Template.forgot.events({
 
   'click #reset-form' : function(e, t) {
       e.preventDefault();
-      
+      console.log('loading');
+      Session.set('loadingSplash', true);
       var email = trimInput(t.find('#email').value);
-      if (isNotEmpty(email) && isEmail(email)) {
-        Session.set('loading', true);
+      if (isNotEmpty(email) && isEmail(email)) {  
         Accounts.forgotPassword({email: email}, function(err){
         if (err){
+          Session.set('loadingSplash', false);
             console.log('error')
             IonPopup.alert({
             title: 'Error',
@@ -61,6 +62,7 @@ Template.forgot.events({
             });
         } 
         else {
+          Session.set('loadingSplash', false);
             IonPopup.alert({
             title: 'Alert',
             template: 'Check your email for a password reset link',
@@ -68,10 +70,16 @@ Template.forgot.events({
             });
           Router.go('/');
         }
-        Session.set('loading', false);
       });
       }
       return false;
+    },
+
+});
+
+Template.forgot.helpers({
+    isLoading: function () {
+      return Session.get('loadingSplash');
     },
 
 });

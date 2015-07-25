@@ -1,4 +1,8 @@
 <template name="forgot">
+{{#if isLoading}}
+  {{> spinner}}
+{{else}}
+
 {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton path="index"}}
   {{/contentFor}}
@@ -19,7 +23,9 @@
         Reset Password
         </button>
     </div>
-
+  
   {{/ionContent}}
 {{/ionView}}
+
+{{/if}}
 </template>

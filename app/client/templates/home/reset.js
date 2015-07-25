@@ -48,40 +48,12 @@ function isNotEmpty(val) {
 
 Template.reset.events({
 
-  'click #reset-form' : function(e, t) {
-      e.preventDefault();
-      var email = trimInput(t.find('#email').value);
-      if (isNotEmpty(email) && isEmail(email)) {
-        Session.set('loading', true);
-        Accounts.forgotPassword({email: email}, function(err){
-        if (err){
-            console.log('error')
-            IonPopup.alert({
-            title: 'Error',
-            template: err.message,
-            okText: 'Got It.'
-            });
-        } 
-        else {
-          Session.set('resetPassword', null);
-            IonPopup.alert({
-            title: 'Alert',
-            template: 'Check your email for a password reset link',
-            okText: 'Got It.'
-            });
-          Router.go('/');
-        }
-        Session.set('loading', false);
-      });
-      }
-      return false;
-    },
-
     'click #reset-password' : function(e, t) {
       e.preventDefault();
+      console.log('loading');
+      Session.set('loading', true);
       var pw = t.find('#password').value;
       if (isNotEmpty(pw) && isValidPassword(pw)) {
-        Session.set('loading', true);
         Accounts.resetPassword(Session.get('resetToken'), pw, function(err){
           if (err) {
             console.log(err.message);

@@ -1,5 +1,5 @@
 rm -R ~/Desktop/build
-cd /Users/hugo/Code/helping-hand/app
+cd /Users/hugooconnor/Code/helping-hand/app
 meteor build ~/Desktop/build --server app.helpinghand.io
 cd ~/Desktop/build/android
 jarsigner -storepass hugo0614 -verbose -sigalg SHA1withRSA -digestalg SHA1 unaligned.apk helpinghand

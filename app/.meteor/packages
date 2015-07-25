@@ -19,3 +19,5 @@ accounts-ui-unstyled
 fourseven:scss@2.0.0
 accounts-base
 accounts-password
+pcel:loading
+sacha:spin
