@@ -69,4 +69,24 @@ Meteor.methods({
     
   },
 
+  getHealth: function(id){
+    var start = new Date(Date.now()-14*24*60*60*1000);
+    var reports = Reports.find({helpeeId: id, created: { $gt: start}}).fetch(); 
+    var health = 100;
+    var weighting = 0;
+    if(reports.length == 0){
+      health = 100;      
+      return health;
+    } else {
+      for (var i=0; i< reports.length; i++) {
+      //todo: add health as function of time.
+      var days = new Date(Date.now() - reports[i].created).getTime();
+      var weight = 1 - Math.pow(parseFloat(days)/parseFloat(14*24*60*60*1000), 2);
+      weighting += weight;
+      health += parseInt(reports[i].health)*weight;
+      }
+    return (health/(weighting+1)).toFixed(2);
+    }
+  },
+
 });

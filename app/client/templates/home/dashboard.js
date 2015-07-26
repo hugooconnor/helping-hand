@@ -10,7 +10,7 @@ Template.dashboard.events({
 Template.dashboard.helpers({
   reports: function () {
       var start = new Date(Date.now()-14*24*60*60*1000);
-      return Reports.find({helpee: Meteor.userId(), created: { $gt: start}}, {"sort" : [['created', 'desc  ']]});
+      return Reports.find({helpeeId: Meteor.userId(), created: { $gt: start}}, {"sort" : [['created', 'desc']]});
     },
 
   //add health calculation here.
@@ -18,7 +18,7 @@ Template.dashboard.helpers({
   health: function () {
     var id = Meteor.userId();
     var start = new Date(Date.now()-14*24*60*60*1000);
-    var reports = Reports.find({helpee: id, created: { $gt: start}}).fetch(); 
+    var reports = Reports.find({helpeeId: id, created: { $gt: start}}).fetch(); 
     var health = 100;
     var weighting = 0;
     if(reports.length == 0){
