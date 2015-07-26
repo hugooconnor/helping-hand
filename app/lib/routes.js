@@ -56,6 +56,20 @@ Router.map( function () {
     return templateData;
         }
     });
+  this.route('editHelpee', {
+  //send data to alerts
+  path: '/helpees/:_id',
+  data: function (){
+    var _id  = this.params._id;
+    var username = Meteor.users.findOne(_id).username;
+    Session.set('helpeeId', _id);
+    templateData = {
+        _id: _id,
+        username: username
+        };
+    return templateData;
+        }
+    });
 });
 
 Router.onBeforeAction(function () {

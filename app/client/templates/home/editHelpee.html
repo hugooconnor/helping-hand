@@ -1,0 +1,46 @@
+<template name="editHelpee">
+
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="people"}}
+{{/contentFor}}
+
+{{#contentFor "headerButtonRight"}}
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Edit Helpee - {{_id}}</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+
+  {{#if isPartner}}
+  <div class="jumbotron">
+        <h3 class="label">@{{username}}'s well-being:</h3>
+        <h2>{{health}}%</h2>
+    </div>
+   {{/if}}
+
+  {{#ionList}}
+    
+  <li class="item item-button-right">
+    New Report
+    <a href="addReport" class="button button-positive">
+      <i class="icon ion-compose"></i>
+    </a>
+  </li>
+
+
+  <li class="item item-button-right">
+    Stop Helping
+    <a href="#" class="button button-positive" id="signout">
+      <i class="icon ion-trash-a"></i>
+    </a>
+  </li>
+
+  {{/ionList}}
+
+
+  {{/ionContent}}
+{{/ionView}}
+</template>

@@ -52,4 +52,21 @@ Meteor.methods({
     }
   },
 
+  checkPartner: function (helpee, helper) {
+      if (Meteor.users.findOne(helpee).partners != null) {
+        var isPartner = false;
+        var partners = Meteor.users.findOne(helpee).partners;
+        for (var i = 0; i < partners.length; i++){
+          if (partners[i] == helper) {
+            isPartner = true;
+          }
+        }
+      return isPartner;
+
+    } else {
+      return false;
+    }
+    
+  },
+
 });

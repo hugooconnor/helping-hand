@@ -175,7 +175,9 @@ Meteor.methods({
         } else {
           return Meteor.users.update({_id: id}, {$set: {username: username}});
         }
-      }
+      },
+
+    
 
      
    });

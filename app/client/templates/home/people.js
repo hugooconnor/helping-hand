@@ -46,7 +46,10 @@ Template.people.helpers({
          for (i=0; i < partnered.length; i++){
             helpingFull.push(Meteor.users.find(partnered[i]).fetch()[0]);
          }
-         return helpingFull;
+         var helpingList = _.uniq(helpingFull, function(item, key, _id) { 
+    			return item._id;
+			});
+         return helpingList;
   	} else if (Meteor.user().helping == null && Meteor.user().partnered != null){
   		var partnered = Meteor.users.find(Meteor.userId()).fetch()[0].partnered;
     	var helpingFull = [];
