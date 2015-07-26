@@ -38,7 +38,7 @@ Template.addReport.events({
         });
       
       
-        Router.go('/');
+        Router.go('/people');
         return false;
       },
 

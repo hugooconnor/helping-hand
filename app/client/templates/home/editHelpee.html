@@ -38,6 +38,22 @@
     </a>
   </li>
 
+  {{#if isPartner}}
+  <div class="item item-divider item-icon-right">
+    Reports About @{{username}}
+    </div>
+
+    {{#if noReports}}
+    <a class="item" href="#">
+    No recent reports.
+    </a>
+    {{/if}}
+
+    {{#each reports}}
+        {{>report}}
+    {{/each}}
+  {{/if}}
+
   {{/ionList}}
 
 
