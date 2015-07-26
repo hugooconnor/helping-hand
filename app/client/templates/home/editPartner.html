@@ -1,0 +1,45 @@
+<template name="editPartner">
+
+{{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="people"}}
+{{/contentFor}}
+
+{{#contentFor "headerButtonRight"}}
+{{/contentFor}}
+
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Edit Partner</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+
+  {{#ionList}}
+
+  <li class="item item-button-right">
+    Delete Partner
+    <a href="" class="button button-positive" id="delete">
+      <i class="icon ion-trash-a"></i>
+    </a>
+  </li>
+
+  <div class="item item-divider item-icon-right">
+    Reports From @{{username}}
+    </div>
+
+    {{#if noReports}}
+    <a class="item" href="#">
+    No recent reports.
+    </a>
+    {{/if}}
+
+    {{#each reports}}
+        {{>report}}
+    {{/each}}
+
+  {{/ionList}}
+
+
+  {{/ionContent}}
+{{/ionView}}
+</template>
