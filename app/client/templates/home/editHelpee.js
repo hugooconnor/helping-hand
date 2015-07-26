@@ -43,7 +43,7 @@ Template.editHelpee.events({
       //remove helper from partnered role
       IonPopup.confirm({
       title: 'Are you sure?',
-      template: 'Are you <strong>really</strong> sure you want to delete?',
+      template: 'Are you <strong>really</strong> sure you want to stop helping?',
       onOk: function() {
         Meteor.call('removeHelper', Session.get('helpeeId'), Meteor.userId(), function (error, result) {
       		  if(error){
