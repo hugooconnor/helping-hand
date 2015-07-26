@@ -19,13 +19,15 @@ Template.addReport.events({
       if (Session.get('anonymous')) {
         var helper = 'anonymous';
       } else {
-        var helper = Meteor.user().username;
+        var helper = Meteor.userId();
       }
+
+      var helpee = Meteor.users.findOne({username: username})._id;
 
       //change to server method and call
       Reports.insert({ 
             helper: helper,
-            helpee: username,
+            helpee: helpee,
             comment: message,
             health: health,
             created: date,

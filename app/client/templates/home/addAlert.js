@@ -11,7 +11,7 @@ Template.addAlert.events({
       //create as server method
       Alerts.insert({ 
             //change to userID
-            helpee: Meteor.user().username,
+            helpee: Meteor.userId(),
             subject: subject,
             body: body,
             health: health,

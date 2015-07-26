@@ -10,7 +10,7 @@ Template.dashboard.events({
 Template.dashboard.helpers({
   reports: function () {
       var start = new Date(Date.now()-14*24*60*60*1000);
-      return Reports.find({helpee: Meteor.user().username, created: { $gt: start}}, {"sort" : [['created', 'desc  ']]});
+      return Reports.find({helpee: Meteor.userId(), created: { $gt: start}}, {"sort" : [['created', 'desc  ']]});
     },
 
   //add health calculation here.
@@ -46,51 +46,6 @@ Template.dashboard.helpers({
     return Meteor.user().username;
   },
 
-  //not working properly
-  noHelpers: function () {
-    var helpers = Meteor.users.find(Meteor.userId()).fetch()[0].helpers;
-    if (helpers.length > 0) {
-      return false;
-    } else {
-      return true;
-    }
-  },
 
-  helpers: function () {
-    var helpers = Meteor.users.find(Meteor.userId()).fetch()[0].helpers;
-    var helpersFull = [];
-         for (i=0; i < helpers.length; i++){
-            helpersFull.push(Meteor.users.find(helpers[i]).fetch()[0]);
-         }
-         return helpersFull;
-  },
-
-  //not working properly
-  noPartners: function () {
-    var partners = Meteor.users.find(Meteor.userId()).fetch()[0].partners;
-    if (partners.length > 0) {
-      return false;
-    } else {
-      return true;
-    }
-  },
-
-  partners: function () {
-    var partners = Meteor.users.find(Meteor.userId()).fetch()[0].partners;
-    var partnersFull = [];
-         for (i=0; i < partners.length; i++){
-            partnersFull.push(Meteor.users.find(partners[i]).fetch()[0]);
-         }
-         return partnersFull;
-  },
-
-  helping: function () {
-    var helping = Meteor.users.find(Meteor.userId()).fetch()[0].helping;
-    var helpingFull = [];
-         for (i=0; i < helping.length; i++){
-            helpingFull.push(Meteor.users.find(helping[i]).fetch()[0]);
-         }
-         return helpingFull;
-  },
 
 });
