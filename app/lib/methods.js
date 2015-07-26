@@ -167,6 +167,19 @@ Meteor.methods({
         Meteor.users.update({_id: helpeeId}, {$pull: {helpers: helperId}});
         Meteor.users.update({_id: helpeeId}, {$pull: {partners: helperId}});
       },
+
+      checkAlert: function(helpeeId, startHealth, endHealth){
+        //for each alert, check if alert.health is between start and end health.
+        //if so, send the alert.
+
+        //get all the alerts that are between the values
+        var alerts = Alerts.find({helpee: helpeeId, health: {$gte: endHealth, $lte: startHealth}}).fetch();
+
+        //send each alert
+
+
+
+      }
     
 
      

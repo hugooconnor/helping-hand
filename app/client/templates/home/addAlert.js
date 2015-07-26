@@ -9,9 +9,9 @@ Template.addAlert.events({
       //console.log(anon);
 
       //create as server method
-      Alerts.insert({ 
-            //change to userID
+      Alerts.insert({
             helpee: Meteor.userId(),
+            notify: Meteor.userId(),
             subject: subject,
             body: body,
             health: health,

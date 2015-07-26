@@ -21,7 +21,7 @@ Template.settings.events({
 
 Template.settings.helpers({
   alerts: function () {
-      return Alerts.find({helpee: Meteor.user().username});
+      return Alerts.find({helpee: Meteor.userId()});
     },
 
   hasAlerts: function () {
