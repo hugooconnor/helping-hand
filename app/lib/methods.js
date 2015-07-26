@@ -51,7 +51,7 @@ Meteor.methods({
     throw new Error("Unable to copy obj! Its type isn't supported.");
    },
 
-   updateEmail: function (email) {
+  updateEmail: function (email) {
       if(Meteor.users.find({ emails: { $elemMatch: { address: email } } }).fetch().length === 0){
          Meteor.users.update({_id:Meteor.user()._id}, {$set: {'emails.0.address': email}});
          IonPopup.alert({
@@ -160,6 +160,13 @@ Meteor.methods({
         }
       },
 
+      removeHelper: function (helpeeId, helperId) {
+        //deletes helper/partner relationship
+        Meteor.users.update({_id: helperId}, {$pull: {helping: helpeeId}});
+        Meteor.users.update({_id: helperId}, {$pull: {partnered: helpeeId}});
+        Meteor.users.update({_id: helpeeId}, {$pull: {helpers: helperId}});
+        Meteor.users.update({_id: helpeeId}, {$pull: {partners: helperId}});
+      },
     
 
      

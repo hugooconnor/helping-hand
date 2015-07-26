@@ -36,3 +36,29 @@ Template.editHelpee.helpers({
     }
 });
 
+
+Template.editHelpee.events({
+	'click #delete': function(e, t){
+      e.preventDefault();
+      //remove helper from partnered role
+      IonPopup.confirm({
+      title: 'Are you sure?',
+      template: 'Are you <strong>really</strong> sure you want to delete?',
+      onOk: function() {
+        Meteor.call('removeHelper', Session.get('helpeeId'), Meteor.userId(), function (error, result) {
+      		  if(error){
+      			console.log(error.reason);
+      			} else {
+      			console.log(result);
+      			}
+      		});
+      		IonPopup.close();
+      		Router.go('/people');
+      },
+      onCancel: function() {
+        IonPopup.close();
+      }
+    });
+      
+    },
+})
