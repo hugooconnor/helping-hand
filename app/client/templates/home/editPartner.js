@@ -3,6 +3,12 @@ Template.editPartner.helpers({
 		var partnerId = Session.get('partnerId');
 		var helpeeId = Meteor.userId();
 		return Reports.find({helperId: partnerId, helpeeId: helpeeId});
+	},
+
+	noReports: function () {
+		var partnerId = Session.get('partnerId');
+		var helpeeId = Meteor.userId();
+		return (Reports.find({helperId: partnerId, helpeeId: helpeeId}).fetch().length == 0);
 	}
 })
 
