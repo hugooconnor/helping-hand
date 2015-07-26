@@ -2,11 +2,11 @@ Template.people.helpers({
 
 //not working properly
   noHelpers: function () {
-  	return Meteor.user().helpers == null;
+  	return (Meteor.user().helpers == null || Meteor.user().helpers.length == 0);
   },
 
   noPartners: function () {
-  	return Meteor.user().partners == null;
+  	return (Meteor.user().partners == null || Meteor.user().partners.length == 0);
   },
 
   noHelping: function () {
