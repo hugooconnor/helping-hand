@@ -24,4 +24,5 @@ Template.editHelpee.helpers({
 		});
 		return Session.get('health');
 	}
-})
+});
+

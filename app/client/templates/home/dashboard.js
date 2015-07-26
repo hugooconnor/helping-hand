@@ -13,6 +13,11 @@ Template.dashboard.helpers({
       return Reports.find({helpeeId: Meteor.userId(), created: { $gt: start}}, {"sort" : [['created', 'desc']]});
     },
 
+  noReports: function () {
+    var start = new Date(Date.now()-14*24*60*60*1000);
+    return (Reports.find({helpeeId: Meteor.userId(), created: { $gt: start}}, {"sort" : [['created', 'desc']]}).fetch().length == 0);
+  },
+
   //add health calculation here.
   //
   health: function () {

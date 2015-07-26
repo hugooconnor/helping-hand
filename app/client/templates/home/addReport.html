@@ -1,6 +1,6 @@
 <template name="addReport">
 {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton path="home"}}
+    {{>ionNavBackButton path="people"}}
 {{/contentFor}}
 
 {{#contentFor "headerButtonRight"}}
@@ -14,15 +14,12 @@
   {{#ionContent}}
   <div class="card">
     <div class="item item-text-wrap">
-    Set the slider to the health score you believe your friend to be at, from 0 - need hospitalisation, to 100 - perfectly fine.
+    Set the slider to the well-being score you believe <b>@{{who}}</b> to be at, on a scale from 0 - need hospitalisation, to 100 - perfectly fine.
     </div>
   </div>
 
   <div class="list">
-        <label class="item item-input">
-            <span class="input-label">Username</span>
-            <input type="text" id="username">
-        </label>
+
         <div class="item range">
           <i class="icon ion-ios-heart-outline"></i>
           <input type="range" name="health" id="health">
