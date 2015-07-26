@@ -1,14 +1,13 @@
 Template.editHelpee.helpers({
 	isPartner: function () {
-		var helpee = Session.get('helpeeId');
-		var helper = Meteor.userId();
-		Meteor.call('checkPartner', helpee, helper, function (error, result) {
+		Meteor.call('checkPartner', Session.get('helpeeId'), Meteor.userId(), function (error, result) {
 			if (error) {
-				console.log('something went wrong');
+				return false;
 			} else {
-				return result;
+				Session.set('isPartner', result);
 			}
 		});
+		return Session.get('isPartner');
 	},
 
 	isTrue: function () {
