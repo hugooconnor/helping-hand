@@ -102,7 +102,7 @@ Meteor.methods({
     var health = 100;
     var weighting = 0;
     if(reports.length == 0){
-      health = 100;      
+      health = 100;     
       return health;
     } else {
       for (var i=0; i< reports.length; i++) {

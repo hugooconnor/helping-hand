@@ -26,18 +26,13 @@ Template.addReport.events({
       var helpeeId = Session.get('helpeeId');
       var helpee = Meteor.users.findOne(helpeeId).username;
       //check start health
-      Meteor.call('getHealth', helpeeId, function (e, r) {
-        if (e){
+      
+      Meteor.call('getHealth', helpeeId, function(e, r) {
+        if(e){
           console.log(e);
         } else {
-          Session.set('endHealth', r);
-        }
-      });
-      var endHealth = Session.get('endHealth');
-      console.log('endHealth = '+endHealth);
-
-      //change to server method and call
-      Reports.insert({ 
+          var startHealth = r;
+          Reports.insert({ 
             helperId: helperId,
             helpeeId: helpeeId,
             helpee: helpee,
@@ -45,29 +40,29 @@ Template.addReport.events({
             comment: message,
             health: health,
             created: date,
-        });
+          });
+          console.log('startHealth = '+startHealth);
+          Meteor.call('getHealth', helpeeId, function (e, r) {
+            if (e) {
+              console.log(e);
+            } else {
+              var endHealth = r;
+              console.log('endHealth = '+endHealth);
+              Meteor.call('checkAlert', helpeeId, startHealth, endHealth, function (e, r){
+                if (e) {
+                  console.log(e);
+                } else {
+                  console.log(r);
+                }
+              });
+              Router.go('/people');
+              return false;
+            }
+          })
 
-      //check end health
-      Meteor.call('getHealth', helpeeId, function (e, r) {
-        if (e){
-          console.log(e);
-        } else {
-          Session.set('startHealth', r);
         }
       });
-      var startHealth = Session.get('startHealth');
       
-      console.log('startHealth = '+startHealth);
-        
-      Meteor.call('checkAlert', helpeeId, startHealth, endHealth, function (e, r){
-        if(e){
-          console.log(e);
-        } else {
-          console.log(r);
-        }
-      });
-      Router.go('/people');
-      return false;
       },
 
 

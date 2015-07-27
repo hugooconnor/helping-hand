@@ -192,7 +192,8 @@ Meteor.methods({
         //send each alert
         for(var i = 0; i < alertsTrigger.length; i++){
           console.log('alert sent!');
-          var user = Meteor.users.findOne(alertsTrigger[i].notify)
+          console.log(alertsTrigger[i].notify);
+          var user = Meteor.users.findOne(alertsTrigger[i].notify);
           var health = alertsTrigger[i].health;
           var to = user.emails[0].address;
           var subject = 'Helping Hand Alert: '+alertsTrigger[i].subject;
