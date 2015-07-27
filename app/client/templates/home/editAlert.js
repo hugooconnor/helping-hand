@@ -44,7 +44,6 @@ Template.editAlert.events({
             });
 
 
-
         Router.go('settings');
         return false;
       },

@@ -12,7 +12,7 @@ Template.addReport.events({
       e.preventDefault();
       var health = t.find('#health').value;
       var message = t.find('#message').value;
-      var date = new Date();
+      
       //var anon = t.find('#anon').value;
       //console.log(anon);
       if (Session.get('anonymous')) {
@@ -32,15 +32,7 @@ Template.addReport.events({
           console.log(e);
         } else {
           var startHealth = r;
-          Reports.insert({ 
-            helperId: helperId,
-            helpeeId: helpeeId,
-            helpee: helpee,
-            helper: helper,
-            comment: message,
-            health: health,
-            created: date,
-          });
+          Meteor.call('addReport', helperId, helpeeId, helpee, helper, message, health);
           console.log('startHealth = '+startHealth);
           Meteor.call('getHealth', helpeeId, function (e, r) {
             if (e) {

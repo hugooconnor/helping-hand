@@ -116,4 +116,20 @@ Meteor.methods({
     }
   },
 
+  addReport: function (helperId, helpeeId, helpee, helper, comment, health) {
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+    var date = new Date();
+    Reports.insert({ 
+            helperId: helperId,
+            helpeeId: helpeeId,
+            helpee: helpee,
+            helper: helper,
+            comment: comment,
+            health: health,
+            created: date,
+          });
+  },
+
 });
