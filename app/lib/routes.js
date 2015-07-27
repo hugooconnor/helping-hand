@@ -27,6 +27,7 @@ Router.map( function () {
     }
   });
   this.route('people');
+  this.route('debug');
   this.route('join');
   this.route('forgot');
   this.route('help');

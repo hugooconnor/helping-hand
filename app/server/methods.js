@@ -132,6 +132,19 @@ Meteor.methods({
           });
   },
 
+  addFeedback: function (helperId, helper, comment) {
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+    var date = new Date();
+    Debug.insert({ 
+            helperId: helperId,
+            helper: helper,
+            comment: comment,
+            created: date,
+          });
+  },
+
   addAlert: function (helpee, notify, subject, body, health) {
     if (! Meteor.userId()) {
       throw new Meteor.Error("not-authorized");
