@@ -48,7 +48,34 @@ Meteor.methods({
       //add the invitee to users roles
       Meteor.users.update({_id: inviteeId}, {$addToSet: obj1});
       //send enrollment link in an email
-      Accounts.sendEnrollmentEmail(inviteeId);
+      //hacked apart from sendEnrollmentEmail
+      var user = Meteor.users.findOne(inviteeId);
+      var token = Random.secret();
+      var when = new Date();
+      var tokenRecord = {
+        token: token,
+        email: email,
+        when: when
+      };
+      Meteor.users.update(inviteeId, {$set: {
+        "services.password.reset": tokenRecord
+      }});
+
+      // before passing to template, update user object with new token
+      Meteor._ensure(user, 'services', 'password').reset = tokenRecord;
+
+      var enrollAccountUrl = Accounts.urls.enrollAccount(token);
+      console.log(enrollAccountUrl); 
+
+      body += ' Follow this link to create your acount: '+enrollAccountUrl
+
+      Meteor.call('sendEmail',
+                      email,
+                      'no-reply@helpinghand.io',
+                      subject,
+                      body
+                        );
+
     }
   },
 

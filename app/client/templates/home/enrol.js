@@ -65,7 +65,7 @@ Template.enrol.events({
           else {
             Router.go('/');
             //simple fix for unique usernames
-            if (Meteor.users.find({username: username}) != null) {
+            if (Meteor.users.find({username: username}).fetch().length > 0) {
               username+="1";
               IonPopup.alert({
               title: 'Allert',
