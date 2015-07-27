@@ -30,10 +30,11 @@ Template.addReport.events({
         if (e){
           console.log(e);
         } else {
-          Session.set('startHealth', r);
+          Session.set('endHealth', r);
         }
       });
-      var startHealth = Session.get('startHealth');
+      var endHealth = Session.get('endHealth');
+      console.log('endHealth = '+endHealth);
 
       //change to server method and call
       Reports.insert({ 
@@ -51,12 +52,20 @@ Template.addReport.events({
         if (e){
           console.log(e);
         } else {
-          Session.set('endHealth', r);
+          Session.set('startHealth', r);
         }
       });
-      var endHealth = Session.get('endHealth');
+      var startHealth = Session.get('startHealth');
+      
+      console.log('startHealth = '+startHealth);
         
-      Meteor.call('checkAlert', helpeeId, startHealth, endHealth);
+      Meteor.call('checkAlert', helpeeId, startHealth, endHealth, function (e, r){
+        if(e){
+          console.log(e);
+        } else {
+          console.log(r);
+        }
+      });
       Router.go('/people');
       return false;
       },
