@@ -35,8 +35,6 @@ Template.addReport.events({
       });
       var startHealth = Session.get('startHealth');
 
-      console.log('startHealth = '+startHealth);
-
       //change to server method and call
       Reports.insert({ 
             helperId: helperId,
@@ -57,7 +55,6 @@ Template.addReport.events({
         }
       });
       var endHealth = Session.get('endHealth');
-      console.log('endHealth = '+endHealth);
         
       Meteor.call('checkAlert', helpeeId, startHealth, endHealth);
       Router.go('/people');

@@ -174,7 +174,6 @@ Meteor.methods({
 
         //get all the alerts that are between the values
         var alerts = Alerts.find({notify: helpeeId}).fetch();
-        console.log("number of alerts= "+alerts.length);
 
         var alertsTrigger = [];
         //loop and discard where health < starthealth
@@ -184,11 +183,8 @@ Meteor.methods({
           }
         }
 
-        console.log('number of triggered alerts= '+alertsTrigger.length);
-
         //send each alert
         for(var i = 0; i < alertsTrigger.length; i++){
-          console.log('alert email triggered')
           var health = alertsTrigger[i].health;
           var to = Meteor.users.findOne(alertsTrigger[i].notify).emails[0].address;
           var subject = 'Helping Hand Alert: '+alertsTrigger[i].subject;

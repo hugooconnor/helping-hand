@@ -11,9 +11,14 @@ Template.addHelper.events({
 
       var email = t.find('#email').value;
       var userId  = Meteor.userId();
+      var username = Meteor.user().username;
       Session.set('loadingSplash', true);
 
-      Meteor.call('inviteUser', email, 'subject', 'message', userId, 'helping', 'helpers', function(error, result){
+      //email content
+      var subject = '@'+username+' has added you as a helper on Helping Hand';
+      var message = 'As a helper, you can file reports on @'+username+"'s well-being.";
+
+      Meteor.call('inviteUser', email, subject, message, userId, 'helping', 'helpers', function(error, result){
         if(error){
           console.log(error.reason)
           Session.set('loadingSplash', false);

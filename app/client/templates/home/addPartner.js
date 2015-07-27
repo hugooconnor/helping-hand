@@ -11,9 +11,14 @@ Template.addPartner.events({
 
       var email = t.find('#email').value;
       var userId  = Meteor.userId();
+      var username = Meteor.user().username;
       Session.set('loadingSplash', true);
 
-      Meteor.call('inviteUser', email, 'subject', 'message', userId, 'partnered', 'partners', function(error, result){
+      //email content
+      var subject = '@'+username+' has added you as a partner on Helping Hand';
+      var message = 'As a partner, you can file reports, see @'+username+"'s well-being score and reports about them.";
+
+      Meteor.call('inviteUser', email, subject, message, userId, 'partnered', 'partners', function(error, result){
       	if(error){
       		console.log(error.reason)
       		Session.set('loadingSplash', false);
