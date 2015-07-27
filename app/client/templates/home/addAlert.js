@@ -4,23 +4,13 @@ Template.addAlert.events({
       var subject = t.find('#alert-subject').value;
       var health = t.find('#health').value;
       var body = t.find('#alert-message').value;
-      var date = new Date();
-      //var anon = t.find('#anon').value;
-      //console.log(anon);
-
-      //create as server method
-      Alerts.insert({
-            helpee: Meteor.userId(),
-            notify: Meteor.userId(),
-            subject: subject,
-            body: body,
-            health: health,
-            created: date,
-        });
+      var user = Meteor.userId();
       
-        console.log("Alert created")
-        Router.go('settings');
-        return false;
+      Meteor.call('addAlert', user, user, subject, body, health);
+      
+      console.log("Alert created")
+      Router.go('settings');
+      return false;
       },
 
 

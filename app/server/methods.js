@@ -132,4 +132,35 @@ Meteor.methods({
           });
   },
 
+  addAlert: function (helpee, notify, subject, body, health) {
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+    var date = new Date();
+
+    Alerts.insert({
+            helpee: helpee,
+            notify: notify,
+            subject: subject,
+            body: body,
+            health: health,
+            created: date,
+        });
+  },
+
+  editAlert: function (id, helpee, notify, subject, body, health) {
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+    var date = new Date();
+    Alerts.update(id, {$set: {
+            helpee: Meteor.userId(),
+            notify: Meteor.userId(),
+            subject: subject,
+            body: body,
+            health: health,
+            created: date,
+      }});
+  },
+
 });

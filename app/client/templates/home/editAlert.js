@@ -24,18 +24,9 @@ Template.editAlert.events({
       var body = t.find('#alert-message').value;
       var date = new Date();
       var id = this._id;
-      //var anon = t.find('#anon').value;
-      //console.log(anon);
+      var user = Meteor.userId();
 
-      //change to server method
-      Alerts.update(id, {$set: {
-            helpee: Meteor.userId(),
-            notify: Meteor.userId(),
-            subject: subject,
-            body: body,
-            health: health,
-            created: date,
-      }});
+      Meteor.call('editAlert', id, user, user, subject, body, health);
 
       IonPopup.alert({
             title: 'Alert',
