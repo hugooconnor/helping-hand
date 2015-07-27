@@ -22,7 +22,7 @@ Template.debug.events({
         var helper = Meteor.user().username;
       }
 
-      Meteor.call('addFeedback', helper, helperId, message);
+      Meteor.call('addFeedback', helperId, helper, message);
       
       IonPopup.alert({
             title: 'Thank You',
