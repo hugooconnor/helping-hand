@@ -25,6 +25,17 @@ Template.addReport.events({
 
       var helpeeId = Session.get('helpeeId');
       var helpee = Meteor.users.findOne(helpeeId).username;
+      //check start health
+      Meteor.call('getHealth', helpeeId, function (e, r) {
+        if (e){
+          console.log(e);
+        } else {
+          Session.set('startHealth', r);
+        }
+      });
+      var startHealth = Session.get('startHealth');
+
+      console.log('startHealth = '+startHealth);
 
       //change to server method and call
       Reports.insert({ 
@@ -36,10 +47,21 @@ Template.addReport.events({
             health: health,
             created: date,
         });
-      
-      
-        Router.go('/people');
-        return false;
+
+      //check end health
+      Meteor.call('getHealth', helpeeId, function (e, r) {
+        if (e){
+          console.log(e);
+        } else {
+          Session.set('endHealth', r);
+        }
+      });
+      var endHealth = Session.get('endHealth');
+      console.log('endHealth = '+endHealth);
+        
+      Meteor.call('checkAlert', helpeeId, startHealth, endHealth);
+      Router.go('/people');
+      return false;
       },
 
 

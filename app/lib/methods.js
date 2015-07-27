@@ -173,13 +173,33 @@ Meteor.methods({
         //if so, send the alert.
 
         //get all the alerts that are between the values
-        var alerts = Alerts.find({helpee: helpeeId, health: {$gte: endHealth, $lte: startHealth}}).fetch();
+        var alerts = Alerts.find({notify: helpeeId}).fetch();
+        console.log("number of alerts= "+alerts.length);
+
+        var alertsTrigger = [];
+        //loop and discard where health < starthealth
+        for (var i = 0; i < alerts.length; i++) {
+          if (alerts[i].health < startHealth && alerts[i].health > endHealth) {
+            alertsTrigger.push(alerts[i]);
+          }
+        }
+
+        console.log('number of triggered alerts= '+alertsTrigger.length);
 
         //send each alert
+        for(var i = 0; i < alertsTrigger.length; i++){
+          console.log('alert email triggered')
+          var health = alertsTrigger[i].health;
+          var to = Meteor.users.findOne(alertsTrigger[i].notify).emails[0].address;
+          var subject = 'Helping Hand Alert: '+alertsTrigger[i].subject;
+          var body = 'Your well-being score has droppped below '+health+'%. Here is what you wrote to yourself; '+alertsTrigger[i].body;
+          var from = 'no-reply@helpinghand.io';
+          //send email
+          Meteor.call('sendEmail', to, from, subject, body);
+        }
 
 
-
-      }
+      },
     
 
      

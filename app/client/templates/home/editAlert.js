@@ -29,8 +29,8 @@ Template.editAlert.events({
 
       //change to server method
       Alerts.update(id, {$set: {
-        helpee: Meteor.userId(),
-        notify: Meteor.userId(),
+            helpee: Meteor.userId(),
+            notify: Meteor.userId(),
             subject: subject,
             body: body,
             health: health,
