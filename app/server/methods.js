@@ -80,18 +80,18 @@ Meteor.methods({
   },
 
   checkPartner: function (helpee, helper) {
-      if (Meteor.users.findOne(helpee).partners != null) {
-        var isPartner = false;
-        var partners = Meteor.users.findOne(helpee).partners;
-        for (var i = 0; i < partners.length; i++){
-          if (partners[i] == helper) {
-            isPartner = true;
+    if (Meteor.users.findOne(helpee).partners != null) {
+      var isPartner = false;
+      var partners = Meteor.users.findOne(helpee).partners;
+      for (var i = 0; i < partners.length; i++){
+        if (partners[i] == helper) {
+          isPartner = true;
           }
         }
       return isPartner;
 
-    } else {
-      return false;
+      } else {
+        return false;
     }
     
   },
@@ -106,8 +106,8 @@ Meteor.methods({
       return health;
     } else {
       for (var i=0; i< reports.length; i++) {
-      //todo: add health as function of time.
       var days = new Date(Date.now() - reports[i].created).getTime();
+      //health regenerates after 2 weeks
       var weight = 1 - Math.pow(parseFloat(days)/parseFloat(14*24*60*60*1000), 2);
       weighting += weight;
       health += parseInt(reports[i].health)*weight;
