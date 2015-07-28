@@ -290,16 +290,8 @@ textarea {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 90vh;
 }
 
-
-.v-center {
-      position: relative;
-      top: 10rem;
-      top: 20vh;
-      /*transform: translateY(-50%);*/
-}
 
 .bg-muted-white {
     background: rgba(255,255,255,.8);
@@ -324,5 +316,23 @@ textarea {
 
 .letter-spacing {
     letter-spacing: .05rem;
+}
+
+.pt4 {
+  padding-top: 4rem;
+}
+
+.pb4 {
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 40em) {
+  .splash {
+    height: 70vh;
+  }
+
+  .sm-pb2 {
+    padding-bottom: 1rem;
+  }
 }
 
