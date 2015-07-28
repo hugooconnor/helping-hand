@@ -64,7 +64,10 @@ Meteor.publish("alerts", function () {
 
 
 Meteor.publish("helpeeView", function (helpeeId) {
+	var helpee = Meteor.users.findOne(helpeeId);
+	if (_.contains(helpee.partners, this.userId)) {
 		var start = new Date(Date.now()-14*24*60*60*1000);
       return Reports.find({helpeeId: helpeeId, created: { $gt: start}}, {"sort" : [['created', 'desc']]});
-});
+  		}
+ });
 
