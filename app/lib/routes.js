@@ -32,7 +32,11 @@ Router.map( function () {
   this.route('forgot');
   this.route('help');
   this.route('dashboard');
-  this.route('settings');
+  this.route('settings', {
+    subscriptions: function (){
+      return Meteor.subscribe("alerts");
+    }
+  });
   this.route('addHelpee');
   this.route('addPartner');
   this.route('addHelper');
@@ -60,6 +64,9 @@ Router.map( function () {
   this.route('editHelpee', {
   //send data to alerts
   path: '/helpees/:_id',
+  subscriptions: function () {
+    return Meteor.subscribe("helpeeView", Session.get("helpeeId"))
+  },
   data: function (){
     var _id  = this.params._id;
     var username = Meteor.users.findOne(_id).username;
@@ -109,6 +116,8 @@ Router.onBeforeAction(function () {
   } else {
     // otherwise don't hold up the rest of hooks or our route/action function
     // from running
+    Meteor.subscribe("currentUser");
+    Meteor.subscribe("relatedUsers");
     this.next();
   }
 
