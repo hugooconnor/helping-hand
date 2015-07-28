@@ -6,11 +6,14 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+		
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:500,300,100,400' rel='stylesheet' type='text/css'>
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
+		
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+        <link rel="stylesheet" href="css/basscss.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -20,7 +23,77 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+		<header class="bg-blue mt0 fixed top-0 col-12 z2">
+			<div class="container">
+				<nav class="px3 py3 clearfix">
+					<h1 class="h1 letter-space light m0 mr2 mb2 inline-block white">Helping Hand</h1>
+					<a class="white right btn btn-outline" href="http://app.helpinghand.io" target="_blank">Try the app</a>
+				</nav>
+			</div>
+		</header>
+		
+		<!-- background image -->
+        <div class="splash  col-12 z1">
+        	<div class="container">
+	        	<div class="px2">
+	        		<div class="bg-muted-white p3 sm-p4 mt4 v-center rounded">
+						<h2 class="h1 mt0 light">Signup to our Mailing List</h2>
+	        			<p class="h3 regular mb3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae magna sit amet justo ullamcorper rutrum. Aenean sed lacus lobortis, varius erat et, vehicula nisi.</p>
+
+	        			<!-- <hr class="border-white"> -->
+
+
+	        			<!-- Begin MailChimp Signup Form -->
+	        			<div id="mc_embed_signup">
+		        			<form action="//hugo.us1.list-manage.com/subscribe/post?u=e8567192e1646f357756d7407&amp;id=73e250ae64" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		        			    
+		        			    <div id="mc_embed_signup_scroll">
+		        				
+			        				<!-- <label for="mce-EMAIL" class="block mb2 h3">Signup to try Helping Hand</label> -->
+			        				
+			        				<input type="email" value="" name="EMAIL" class="email regular block col-12 field p2 letter-spacing" id="mce-EMAIL" placeholder="email address" required>
+		        			    
+			        			    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			        			    <div style="position: absolute; left: -5000px;"><input type="text" name="b_e8567192e1646f357756d7407_73e250ae64" tabindex="-1" value=""></div>
+		        			    	
+		        			    	<!-- subscribe button -->
+			        			    <div class="clear mt2">
+			        			    	<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary px4 py2 regular letter-spacing">
+			        			    </div>
+		        			    </div>
+		        			</form>
+	        			</div>
+
+	        			<!--End mc_embed_signup-->
+	        		</div>
+
+
+	        	</div>
+        	</div>
+        </div>
+       
+
+        <footer class="col-12 bg-black py3 relative z3 bottom-0">
+        	<div class="container">
+        		<div class="px2 clearfix">
+        			<div class="sm-col sm-col-6">
+        				<h3 class="light white muted">Helping Hand</h3>
+        			</div>
+  					
+  					<div class="sm-col sm-col-6 mt2">
+						<div class="right-align">
+							<p class="white regular inline mr2">Find us on github</p>
+	  						<div class="inline-block">
+	  							<iframe src="https://ghbtns.com/github-btn.html?user=hugooconnor&repo=helping-hand&type=watch&count=true&size=large" frameborder="0" scrolling="0" width="170px" height="30px"></iframe>
+	  						</div>
+	  					</div>
+
+  					</div>
+        			
+        		</div>
+        	</div>
+
+        </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
