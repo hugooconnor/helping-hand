@@ -23,6 +23,8 @@ Meteor.methods({
     var obj1 = {};
     obj1[userRole] = userId;
     var obj2 = {};
+    //strip any whitespace
+    email = email.replace(/^\s*|\s*$/g, "");
     //can't fill obj2 until we have inviteeId
 
     if (Meteor.users.find({'emails.0.address': email}).fetch().length > 0){
